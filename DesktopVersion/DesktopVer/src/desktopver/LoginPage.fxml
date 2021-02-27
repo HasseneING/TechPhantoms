@@ -14,6 +14,6 @@
       <Label layoutX="132.0" layoutY="204.0" text="Password" />
       <Button fx:id="submitBtn" layoutX="284.0" layoutY="257.0" mnemonicParsing="false" text="Submit" />
       <Button fx:id="passwordForgotbtn" layoutX="246.0" layoutY="312.0" mnemonicParsing="false" text="I forgot my password" />
-      <Label fx:id="showPass" layoutX="407.0" layoutY="115.0" prefHeight="114.0" prefWidth="165.0" />
+      <Label fx:id="showPass" layoutX="217.0" layoutY="14.0" prefHeight="114.0" prefWidth="165.0" />
    </children>
 </AnchorPane>
