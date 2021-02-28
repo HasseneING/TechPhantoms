@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test;
+package desktopver;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author PC
  */
-public class FXMLController implements Initializable {
+public class Matiere_intController implements Initializable {
 
     /**
      * Initializes the controller class.
