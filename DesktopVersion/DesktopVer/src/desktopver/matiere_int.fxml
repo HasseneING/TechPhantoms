@@ -5,8 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="264.0" layoutY="21.0" prefHeight="44.0" prefWidth="197.0" text="Matiére" />
       <Label fx:id="id" layoutX="61.0" layoutY="102.0" text="Id :" />
@@ -19,7 +18,7 @@
       <TextField layoutX="131.0" layoutY="214.0" />
       <TextField layoutX="131.0" layoutY="268.0" />
       <TextField layoutX="131.0" layoutY="331.0" />
-      <Button layoutX="461.0" layoutY="145.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Ajouter" />
-      <Button layoutX="461.0" layoutY="227.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Supprimer" />
+      <Button fx:id="ajout_btn" layoutX="461.0" layoutY="145.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Ajouter" />
+      <Button fx:id="suppression_btn" layoutX="461.0" layoutY="227.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Supprimer" />
    </children>
 </AnchorPane>
