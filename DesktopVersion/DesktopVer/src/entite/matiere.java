@@ -16,7 +16,7 @@ public class matiere {
    private String disponibilité ;
    private int id_teacher ;
 
-    public matiere(String nom, String type, String disponibilté, int id_teacher) {
+    public matiere(String nom, String type, String disponibilité, int id_teacher) {
         this.nom = nom;
         this.type = type;
         this.disponibilité = disponibilité;

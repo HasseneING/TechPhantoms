@@ -31,15 +31,15 @@ public class matiere_service {
     }
     
      public void ajouterMatiere(matiere m) {
-        String req = "insert into matiere (nom,type,disponibiité,id_teacher) values (?,?,?,?)";
+        String req = "insert into matiere (nom,type,disponibilité,id_teacher) values (?,?,?,?)";
 
         try {
             pst = conn.prepareStatement(req);
             pst.setString(1, m.getNom());
             pst.setString(2, m.getType());
-             pst.setString(3, m.getDisponibilité());
-              pst.setInt(4, m.getId_teacher());
-            pst.executeUpdate();
+            pst.setString(3, m.getDisponibilité());
+            pst.setInt(4, m.getId_teacher());
+            pst.executeUpdate(); 
 
         } catch (SQLException ex) {
             Logger.getLogger(matiere_service.class.getName()).log(Level.SEVERE, null, ex);
