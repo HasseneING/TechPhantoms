@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="desktopver.AvailabilityScheduleController">
+   <children>
+      <Label layoutX="148.0" layoutY="267.0" text="Start" />
+      <Label layoutX="150.0" layoutY="315.0" text="End" />
+      <DatePicker fx:id="startDatePicker" layoutX="270.0" layoutY="262.0" prefHeight="26.0" prefWidth="171.0" />
+      <DatePicker fx:id="endDatePicker" layoutX="270.0" layoutY="310.0" prefHeight="26.0" prefWidth="171.0" />
+      <ComboBox fx:id="startHourCombo" layoutX="484.0" layoutY="263.0" prefHeight="26.0" prefWidth="78.0" />
+      <ComboBox fx:id="startMinCombo" layoutX="611.0" layoutY="263.0" prefHeight="26.0" prefWidth="78.0" />
+      <ComboBox fx:id="endHourCombo" layoutX="484.0" layoutY="312.0" prefHeight="26.0" prefWidth="78.0" />
+      <ComboBox fx:id="endMinCombo" layoutX="611.0" layoutY="312.0" prefHeight="26.0" prefWidth="78.0" />
+      <Label layoutX="457.0" layoutY="268.0" text="HH:" />
+      <Label layoutX="457.0" layoutY="316.0" text="HH:" />
+      <Label layoutX="568.0" layoutY="267.0" text="MM:" />
+      <Label layoutX="568.0" layoutY="314.0" text="MM:" />
+      <Button layoutX="549.0" layoutY="393.0" mnemonicParsing="false" onAction="#btnAddAvailableDateClicked" text="Add" />
+      <Label layoutX="286.0" layoutY="64.0" text="Add Available Date" textAlignment="CENTER">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
