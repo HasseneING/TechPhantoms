@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package desktopver;
+package controller;
 
 import entite.matiere;
 import java.net.URL;
@@ -38,15 +38,17 @@ public class Matiere_intController {
     @FXML
     private TextField id_teach_tf;
     @FXML
-    private TableColumn<matiere, integer > id_v;
+    private TableColumn<matiere, Integer > id_v;
     @FXML
-    private TableColumn<?, ?> nom_v;
+    private TableColumn<matiere, String> nom_v;
     @FXML
-    private TableColumn<?, ?> type_v;
+    private TableColumn<matiere, String> type_v;
     @FXML
-    private TableColumn<?, ?> dispo_v;
+    private TableColumn<matiere, String> dispo_v;
     @FXML
-    private TableColumn<?, ?> id_techer_v;
+    private TableColumn<matiere, Integer> id_techer_v;
+    @FXML
+    private Button modif_btn;
 
   
     @FXML
@@ -59,8 +61,16 @@ public class Matiere_intController {
         
     }    
     @FXML
+            
     public void btnSuppClick(){
-        System.out.println("Supprimer");
+         matiere m = new matiere(Integer.valueOf(id_tf.getText()));
+       matiere_service ms=new matiere_service();
+       ms.supprimerMatiere(m) ;
+    } 
+    @FXML
+    public void btnmodifClick(){
+         matiere m = new matiere(Integer.valueOf(id_tf.getText()),nom_tf.getText(), type.getText(), dispo_tf.getText(), Integer.valueOf(id_teach_tf.getText()));
+        matiere_service ms=new matiere_service();
+       ms.modifierMatiere(m) ;
     }
-    
 }

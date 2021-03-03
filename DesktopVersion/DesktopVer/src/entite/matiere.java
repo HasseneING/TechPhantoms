@@ -22,7 +22,20 @@ public class matiere {
         this.disponibilité = disponibilité;
         this.id_teacher = id_teacher;
     }
-   
+
+    public matiere(int id) {
+        this.id=id;
+           
+    }
+
+    public matiere(int id, String nom, String type, String disponibilité, int id_teacher) {
+        this.id = id;
+        this.nom = nom;
+        this.type = type;
+        this.disponibilité = disponibilité;
+        this.id_teacher = id_teacher;
+    }
+
 
     /**
      * @return the id
