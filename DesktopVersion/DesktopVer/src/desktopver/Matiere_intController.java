@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import service.matiere_service;
 
@@ -36,6 +37,16 @@ public class Matiere_intController {
     private TextField dispo_tf;
     @FXML
     private TextField id_teach_tf;
+    @FXML
+    private TableColumn<matiere, integer > id_v;
+    @FXML
+    private TableColumn<?, ?> nom_v;
+    @FXML
+    private TableColumn<?, ?> type_v;
+    @FXML
+    private TableColumn<?, ?> dispo_v;
+    @FXML
+    private TableColumn<?, ?> id_techer_v;
 
   
     @FXML
@@ -47,5 +58,9 @@ public class Matiere_intController {
         
         
     }    
+    @FXML
+    public void btnSuppClick(){
+        System.out.println("Supprimer");
+    }
     
 }

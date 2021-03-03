@@ -4,48 +4,48 @@
  * and open the template in the editor.
  */
 package service;
-import entite.matiere ;
+
+import entite.niveau;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import utils.DataSource;
+
 /**
  *
  * @author PC
  */
-public class matiere_service {
+
+    public class niveau_service {
         private Statement ste;
     private PreparedStatement pst;
     private ResultSet rs;
-   
 
     private Connection conn;
 
-    public matiere_service() {
+    public niveau_service() {
         conn = DataSource.getInstance().getCnx();
     }
-    
-     public void ajouterMatiere(matiere m) {
-        String req = "insert into matiere (nom,type,disponibilité,id_teacher) values (?,?,?,?)";
+    public void ajouterNiveau(niveau n) {
+        String req = "insert into niveau (nom_niv,id_teacher) values (?,?)";
 
         try {
             pst = conn.prepareStatement(req);
-            pst.setString(1, m.getNom());
-            pst.setString(2, m.getType());
-            pst.setString(3, m.getDisponibilité());
-            pst.setInt(4, m.getId_teacher());
+            pst.setString(1, n.getNom_niv());
+            pst.setInt(2, n.getId_teacher());
             pst.executeUpdate(); 
 
         } catch (SQLException ex) {
             Logger.getLogger(matiere_service.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+    
+    
+    
+    
     }
-     
-}
+    }
+

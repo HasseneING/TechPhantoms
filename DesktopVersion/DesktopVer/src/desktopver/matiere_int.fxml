@@ -2,23 +2,34 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="desktopver.Matiere_intController">
    <children>
       <Label layoutX="264.0" layoutY="21.0" prefHeight="44.0" prefWidth="197.0" text="Matiére" />
-      <Label layoutX="61.0" layoutY="102.0" text="Id :" />
-      <Label layoutX="61.0" layoutY="161.0" text="Nom :" />
-      <Label layoutX="61.0" layoutY="218.0" text="Type :" />
-      <Label layoutX="41.0" layoutY="272.0" text="Disponibilité :" />
-      <Label layoutX="39.0" layoutY="335.0" text="Id_teacher :" />
-      <TextField fx:id="id_tf" layoutX="131.0" layoutY="98.0" />
-      <TextField fx:id="nom_tf" layoutX="131.0" layoutY="157.0" />
-      <TextField fx:id="type" layoutX="131.0" layoutY="214.0" />
-      <TextField fx:id="dispo_tf" layoutX="131.0" layoutY="268.0" />
-      <TextField fx:id="id_teach_tf" layoutX="131.0" layoutY="331.0" />
-      <Button fx:id="ajout_btn" layoutX="461.0" layoutY="145.0" mnemonicParsing="false" onAction="#btnAjoutClicked" prefHeight="25.0" prefWidth="82.0" text="Ajouter" />
-      <Button fx:id="suppression_btn" layoutX="461.0" layoutY="227.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Supprimer" />
+      <Label layoutX="13.0" layoutY="81.0" text="Id :" />
+      <Label layoutX="14.0" layoutY="118.0" text="Nom :" />
+      <Label layoutX="15.0" layoutY="154.0" text="Type :" />
+      <Label layoutX="11.0" layoutY="192.0" text="Disponibilité :" />
+      <Label layoutX="17.0" layoutY="224.0" text="Id_teacher :" />
+      <TextField fx:id="id_tf" layoutX="78.0" layoutY="77.0" prefHeight="25.0" prefWidth="90.0" />
+      <TextField fx:id="nom_tf" layoutX="78.0" layoutY="114.0" prefHeight="25.0" prefWidth="90.0" />
+      <TextField fx:id="type" layoutX="78.0" layoutY="150.0" prefHeight="25.0" prefWidth="90.0" />
+      <TextField fx:id="dispo_tf" layoutX="94.0" layoutY="188.0" prefHeight="25.0" prefWidth="82.0" />
+      <TextField fx:id="id_teach_tf" layoutX="94.0" layoutY="220.0" prefHeight="25.0" prefWidth="82.0" />
+      <Button fx:id="ajout_btn" layoutX="37.0" layoutY="325.0" mnemonicParsing="false" onAction="#btnAjoutClicked" prefHeight="25.0" prefWidth="82.0" text="Ajouter" />
+      <Button fx:id="suppression_btn" layoutX="144.0" layoutY="325.0" mnemonicParsing="false" onAction="#btnSuppClick" prefHeight="25.0" prefWidth="90.0" text="Supprimer" />
+      <TableView layoutX="189.0" layoutY="71.0" prefHeight="200.0" prefWidth="386.0">
+        <columns>
+          <TableColumn fx:id="id_v" prefWidth="75.0" text="Id" />
+          <TableColumn fx:id="nom_v" prefWidth="75.0" text="Nom" />
+            <TableColumn fx:id="type_v" prefWidth="75.0" text="Type" />
+            <TableColumn fx:id="dispo_v" prefWidth="90.0" text="Disponibilité" />
+            <TableColumn fx:id="id_techer_v" prefWidth="72.0" text="Id_teacher" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
