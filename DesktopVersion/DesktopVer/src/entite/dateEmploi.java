@@ -16,11 +16,18 @@ public class dateEmploi {
     private boolean disponibility;
     private Timestamp startTime,endTime;
 
-    public dateEmploi(boolean disponibility, Timestamp startTime, Timestamp endTime) {
+    public dateEmploi( Timestamp startTime, Timestamp endTime) {
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
+
+    public dateEmploi(int dateID, boolean disponibility, Timestamp startTime, Timestamp endTime) {
+        this.dateID = dateID;
         this.disponibility = disponibility;
         this.startTime = startTime;
         this.endTime = endTime;
     }
+    
 
     public int getDateID() {
         return dateID;

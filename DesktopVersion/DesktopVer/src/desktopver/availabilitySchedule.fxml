@@ -4,29 +4,38 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="controller.AvailabilityScheduleController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AvailabilityScheduleController">
    <children>
-      <Label layoutX="148.0" layoutY="267.0" text="Start" />
-      <Label layoutX="150.0" layoutY="315.0" text="End" />
-      <DatePicker fx:id="startDatePicker" layoutX="270.0" layoutY="262.0" prefHeight="26.0" prefWidth="171.0" />
-      <DatePicker fx:id="endDatePicker" layoutX="270.0" layoutY="310.0" prefHeight="26.0" prefWidth="171.0" />
-      <ComboBox fx:id="startHourCombo" layoutX="484.0" layoutY="263.0" prefHeight="26.0" prefWidth="78.0" />
-      <ComboBox fx:id="startMinCombo" layoutX="611.0" layoutY="263.0" prefHeight="26.0" prefWidth="78.0" />
-      <ComboBox fx:id="endHourCombo" layoutX="484.0" layoutY="312.0" prefHeight="26.0" prefWidth="78.0" />
-      <ComboBox fx:id="endMinCombo" layoutX="611.0" layoutY="312.0" prefHeight="26.0" prefWidth="78.0" />
-      <Label layoutX="457.0" layoutY="268.0" text="HH:" />
-      <Label layoutX="457.0" layoutY="316.0" text="HH:" />
-      <Label layoutX="568.0" layoutY="267.0" text="MM:" />
-      <Label layoutX="568.0" layoutY="314.0" text="MM:" />
+      <Label layoutX="129.0" layoutY="305.0" text="Start" />
+      <Label layoutX="131.0" layoutY="353.0" text="End" />
+      <DatePicker fx:id="startDatePicker" layoutX="251.0" layoutY="300.0" prefHeight="26.0" prefWidth="171.0" />
+      <DatePicker fx:id="endDatePicker" layoutX="251.0" layoutY="348.0" prefHeight="26.0" prefWidth="171.0" />
+      <ComboBox fx:id="startHourCombo" layoutX="465.0" layoutY="301.0" prefHeight="26.0" prefWidth="78.0" />
+      <ComboBox fx:id="startMinCombo" layoutX="592.0" layoutY="301.0" prefHeight="26.0" prefWidth="78.0" />
+      <ComboBox fx:id="endHourCombo" layoutX="465.0" layoutY="350.0" prefHeight="26.0" prefWidth="78.0" />
+      <ComboBox fx:id="endMinCombo" layoutX="592.0" layoutY="350.0" prefHeight="26.0" prefWidth="78.0" />
+      <Label layoutX="438.0" layoutY="306.0" text="HH:" />
+      <Label layoutX="438.0" layoutY="354.0" text="HH:" />
+      <Label layoutX="549.0" layoutY="305.0" text="MM:" />
+      <Label layoutX="549.0" layoutY="352.0" text="MM:" />
       <Button layoutX="549.0" layoutY="393.0" mnemonicParsing="false" onAction="#btnAddAvailableDateClicked" text="Add" />
-      <Label layoutX="286.0" layoutY="64.0" text="Add Available Date" textAlignment="CENTER">
+      <Label layoutX="286.0" layoutY="32.0" text="Add Available Date" textAlignment="CENTER">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
+      <TableView fx:id="scheduleView" layoutX="116.0" layoutY="71.0" prefHeight="200.0" prefWidth="550.0">
+        <columns>
+          <TableColumn fx:id="dateIDCol" prefWidth="75.0" text="dateID" />
+          <TableColumn fx:id="startTimeCol" prefWidth="75.0" text="startTime" />
+            <TableColumn fx:id="endTimeCol" prefWidth="75.0" text="endTime" />
+            <TableColumn fx:id="availableCol" prefWidth="75.0" text="available" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
