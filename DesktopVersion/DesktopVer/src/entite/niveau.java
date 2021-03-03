@@ -21,6 +21,11 @@ public class niveau {
         this.id_teacher = id_teacher;
     }
 
+    public niveau(int id) {
+        this.id_n=id;
+
+    }
+
 
     public int getId_n() {
         return id_n;

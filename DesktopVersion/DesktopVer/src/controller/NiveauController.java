@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package desktopver;
+package controller;
 
 import entite.matiere;
 import entite.niveau;
@@ -11,6 +11,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import service.niveau_service;
 
@@ -27,6 +28,12 @@ public class NiveauController  {
     private TextField nomniveau_tf;
     @FXML
     private TextField id_teacher_tf;
+    @FXML
+    private Button Ajout1;
+    @FXML
+    private Button Supp1;
+    @FXML
+    private Button modif1;
 
      @FXML
     public void btnAjout1Clicked()  {
@@ -39,7 +46,15 @@ public class NiveauController  {
     }    
     @FXML
     public void btnSupp1Click(){
-        System.out.println("Supprimer");
+         niveau_service ns =new niveau_service();
+          niveau n = new niveau(Integer.valueOf(Idn_tf.getId()));
+    ns.supprimerNiveau(n);
     }
+    @FXML
+    public void btnmodif1Click(){
+         niveau n = new niveau(nomniveau_tf.getText(),  Integer.valueOf(id_teacher_tf.getText()));
+        niveau_service ns=new niveau_service();
+       ns.modifierNiveau(n) ;
     
+    }
 }

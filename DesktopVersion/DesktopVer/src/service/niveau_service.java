@@ -5,6 +5,7 @@
  */
 package service;
 
+import entite.matiere;
 import entite.niveau;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,12 +41,50 @@ import utils.DataSource;
             pst.executeUpdate(); 
 
         } catch (SQLException ex) {
-            Logger.getLogger(matiere_service.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(niveau_service.class.getName()).log(Level.SEVERE, null, ex);
         }
     
     
     
     
     }
-    }
+    public void modifierNiveau (niveau n){
+           
+     
+          String req = "update nom set nom_niv=? , id_teacher=? where id_n=?" ;
 
+        try {
+            pst = conn.prepareStatement(req);
+            pst.setString(1, n.getNom_niv());
+            
+             
+              pst.setInt(2, n.getId_teacher());
+              pst.setInt(3, n.getId_n());
+            pst.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(niveau_service.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     }
+    
+      
+          public void supprimerNiveau (niveau n){
+          String req = "delete from niveau  where id_n=?" ;
+
+        try {
+           
+              pst.setInt(1, n.getId_n());
+            pst.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(niveau_service.class.getName()).log(Level.SEVERE, null, ex);
+        
+        
+        
+    
+       
+        
+    
+    }
+    }
+    }
