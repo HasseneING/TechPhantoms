@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="tab" prefHeight="351.0" prefWidth="456.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="desktopver.ReservationService">
+
+   <children>
+      <Label layoutX="67.0" layoutY="46.0" text="Choose Your Reservation Date">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <JFXDatePicker fx:id="calendar" layoutX="143.0" layoutY="124.0" />
+      <JFXTimePicker fx:id="timee" layoutX="143.0" layoutY="189.0" />
+      <JFXButton fx:id="submit" layoutX="201.0" layoutY="262.0" text="Submit" onAction="#btnSubmit"/>
+   </children>
+</AnchorPane>
