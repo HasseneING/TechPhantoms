@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : Dim 28 fév. 2021 à 14:10
+-- Généré le : jeu. 04 mars 2021 à 18:20
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 8.0.1
 
@@ -28,22 +28,23 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `meet` (
-  `id` int(11) NOT NULL,
-  `access_meet` text NOT NULL
+  `room_id` int(11) NOT NULL,
+  `teacherID` int(11) DEFAULT NULL,
+  `room_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Structure de la table `rendez_vous`
+-- Déchargement des données de la table `meet`
 --
 
-CREATE TABLE `rendez_vous` (
-  `id` int(10) NOT NULL,
-  `date` date NOT NULL,
-  `heure` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
-  `valider` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `meet` (`room_id`, `teacherID`, `room_name`) VALUES
+(1, NULL, 'ahlem'),
+(3, NULL, ''),
+(4, NULL, 'syrine'),
+(5, NULL, 'Syrine3A13'),
+(6, NULL, 'ahlem3A13'),
+(8, NULL, 'PIDEV3A13'),
+(9, NULL, 'PIDEV3A13');
 
 --
 -- Index pour les tables déchargées
@@ -53,13 +54,7 @@ CREATE TABLE `rendez_vous` (
 -- Index pour la table `meet`
 --
 ALTER TABLE `meet`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `rendez_vous`
---
-ALTER TABLE `rendez_vous`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`room_id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -69,13 +64,7 @@ ALTER TABLE `rendez_vous`
 -- AUTO_INCREMENT pour la table `meet`
 --
 ALTER TABLE `meet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `rendez_vous`
---
-ALTER TABLE `rendez_vous`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
