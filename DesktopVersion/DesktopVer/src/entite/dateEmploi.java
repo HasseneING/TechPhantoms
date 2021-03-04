@@ -56,6 +56,11 @@ public class dateEmploi {
     public void setEndTime(Timestamp endTime) {
         this.endTime = endTime;
     }
+
+    @Override
+    public String toString() {
+        return "dateEmploi{" + "dateID=" + dateID + ", disponibility=" + disponibility + ", startTime=" + startTime + ", endTime=" + endTime + '}';
+    }
     
     
     
