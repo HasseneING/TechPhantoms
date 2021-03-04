@@ -6,6 +6,7 @@
 package controller;
 
 import entite.dateEmploi;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.sql.Timestamp;
 import java.time.LocalDate;
@@ -25,6 +26,8 @@ import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import service.scheduleService;
+import utils.AlertBox;
+import utils.AlertBoxPaiement;
 
 /**
  * FXML Controller class
@@ -84,7 +87,7 @@ public class AvailabilityScheduleController implements Initializable {
     }
 
     @FXML
-    public void getItemsButton() {
+    public void getItemsButton() throws FileNotFoundException {
         ObservableList<dateEmploi> dateInfoList;
 
         dateInfoList = scheduleView.getSelectionModel().getSelectedItems();
@@ -93,12 +96,16 @@ public class AvailabilityScheduleController implements Initializable {
         scheduleService sS = new scheduleService();
 
         //System.out.println(dateEmp.toString());
+        
+        
         if (dateEmp.isDisponibility()) {
             sS.bookSession(dateEmp);
-            System.out.println("Available Session Booked!");
+           AlertBoxPaiement.display("Pay your tutor!", "");
             scheduleView.setItems(sS.getDatesForSchedule(1));
             scheduleView.refresh();
         }
+        else
+            AlertBox.display("Erreur", "Session unavailable, Pick another time!");
 
     }
 
