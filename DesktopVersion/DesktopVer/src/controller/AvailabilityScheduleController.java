@@ -10,14 +10,18 @@ import java.net.URL;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import service.scheduleService;
@@ -54,7 +58,8 @@ public class AvailabilityScheduleController implements Initializable {
     private TableColumn<dateEmploi, Timestamp> endTimeCol;
     @FXML
     private TableColumn<dateEmploi, Integer> availableCol;
-   
+    @FXML
+    private Button getItemsButton;
 
     @FXML
     public void btnAddAvailableDateClicked() {
@@ -78,6 +83,25 @@ public class AvailabilityScheduleController implements Initializable {
         System.out.println("start:  " + ldtStart + " end: " + ldtEnd);
     }
 
+    @FXML
+    public void getItemsButton() {
+        ObservableList<dateEmploi> dateInfoList;
+
+        dateInfoList = scheduleView.getSelectionModel().getSelectedItems();
+        dateEmploi dateEmp = new dateEmploi(dateInfoList.get(0).getDateID(), dateInfoList.get(0).isDisponibility(), dateInfoList.get(0).getStartTime(), dateInfoList.get(0).getEndTime());
+
+        scheduleService sS = new scheduleService();
+
+        //System.out.println(dateEmp.toString());
+        if (dateEmp.isDisponibility()) {
+            sS.bookSession(dateEmp);
+            System.out.println("Available Session Booked!");
+            scheduleView.setItems(sS.getDatesForSchedule(1));
+            scheduleView.refresh();
+        }
+
+    }
+
     /**
      * Initializes the controller class.
      */
@@ -94,7 +118,13 @@ public class AvailabilityScheduleController implements Initializable {
         endMinCombo.setItems(minutes);
         endMinCombo.setValue("00");
         scheduleService sS = new scheduleService();
-        
+        dateIDCol.setCellValueFactory(new PropertyValueFactory<>("dateID"));
+        startTimeCol.setCellValueFactory(new PropertyValueFactory<>("startTime"));
+
+        endTimeCol.setCellValueFactory(new PropertyValueFactory<>("endTime"));
+
+        availableCol.setCellValueFactory(new PropertyValueFactory<>("disponibility"));
+
         scheduleView.setItems(sS.getDatesForSchedule(1));
         scheduleView.refresh();
     }

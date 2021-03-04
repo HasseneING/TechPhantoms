@@ -50,6 +50,19 @@ public class scheduleService {
             Logger.getLogger(matiere_service.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+        public void bookSession(dateEmploi DateEmp) {
+        String req = "update date_emploi set disponibility=? WHERE dateID=?";
+
+        try {
+            pst = conn.prepareStatement(req);
+            pst.setBoolean(1, false);
+            pst.setInt(2, DateEmp.getDateID());
+            pst.executeUpdate();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(matiere_service.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     public ObservableList<dateEmploi> getDatesForSchedule(int teacherID) { //From Session Variable ? 
         String req = "SELECT * from date_emploi where teacherID=?";
