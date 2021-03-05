@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="569.0" prefWidth="812.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1">
+   <children>
+      <Text layoutX="218.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our best users for the week " wrappingWidth="375.0628967285156" />
+      <Text layoutX="43.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Best Tutor : " wrappingWidth="126.12651824951172" />
+      <Text layoutX="43.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Best Student : " wrappingWidth="126.1265182495116" />
+   </children>
+</AnchorPane>
