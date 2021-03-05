@@ -12,6 +12,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import service.niveau_service;
 
@@ -34,6 +35,12 @@ public class NiveauController  {
     private Button Supp1;
     @FXML
     private Button modif1;
+    @FXML
+    private TableColumn<niveau, String> nomniv_v;
+    @FXML
+    private TableColumn<niveau, Integer> idteach_v;
+    @FXML
+    private TableColumn<niveau, Integer> idn_v;
 
      @FXML
     public void btnAjout1Clicked()  {

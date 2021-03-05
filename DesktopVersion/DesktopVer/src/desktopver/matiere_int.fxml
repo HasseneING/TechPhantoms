@@ -26,13 +26,13 @@
       <TextField fx:id="id_teach_tf" layoutX="94.0" layoutY="220.0" prefHeight="25.0" prefWidth="82.0" />
       <Button fx:id="ajout_btn" layoutX="37.0" layoutY="325.0" mnemonicParsing="false" onAction="#btnAjoutClicked" prefHeight="25.0" prefWidth="82.0" text="Ajouter" />
       <Button fx:id="suppression_btn" layoutX="292.0" layoutY="325.0" mnemonicParsing="false" onAction="#btnSuppClick" prefHeight="25.0" prefWidth="90.0" text="Supprimer" />
-      <TableView layoutX="189.0" layoutY="71.0" prefHeight="200.0" prefWidth="386.0">
+      <TableView fx:id="matiereview" layoutX="189.0" layoutY="71.0" prefHeight="200.0" prefWidth="386.0">
         <columns>
           <TableColumn fx:id="id_v" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="nom_v" prefWidth="75.0" text="Nom" />
             <TableColumn fx:id="type_v" prefWidth="75.0" text="Type" />
             <TableColumn fx:id="dispo_v" prefWidth="90.0" text="Disponibilité" />
-            <TableColumn fx:id="id_techer_v" prefWidth="72.0" text="Id_teacher" />
+            <TableColumn fx:id="id_teacher_v" prefWidth="72.0" text="Id_teacher" />
         </columns>
       </TableView>
       <Button fx:id="modif_btn" layoutX="168.0" layoutY="326.0" mnemonicParsing="false" onAction="#btnmodifClick" prefHeight="25.0" prefWidth="90.0" text="Modifier" />

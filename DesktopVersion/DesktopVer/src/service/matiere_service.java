@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.cell.PropertyValueFactory;
 import utils.DataSource;
 
 /**
@@ -82,5 +83,29 @@ public class matiere_service {
         }
 
     }
+    public void afficherMatiere (){
+        
+    
+    String sql= "select * from matiere";
+    try {
+    ste=conn.prepareStatement(sql);
+    result=pst.executeQuery();
+    while(result.next()){
+        data.add (new matiere (result.getInt("id")),result.getString("nom"),result.getString("type"),result.getString("disponibilité"),result.getInt("id_teacher")) ;
+    }
+    } catch (SQLExeption e){ system.out.print(e); 
+    
+    }
+    id_v.setCellValueFactory (new PropertyValueFactory <matiere,Integer>("Id"));
+    
+    nom_v.setCellValueFactory (new PropertyValueFactory <matiere,String>("nom"));
+    
+    type_v.setCellValueFactory (new PropertyValueFactory <matiere,String>("type"));
+    
+    dispo_v.setCellValueFactory (new PropertyValueFactory <matiere,String>("diponibilité"));
 
+    id_teacher_v.setCellValueFactory (new PropertyValueFactory <matiere,Integer>("Id"));
+    matiereview.SetItems(data);
+}
+ 
 }

@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import service.matiere_service;
 
@@ -46,9 +47,11 @@ public class Matiere_intController {
     @FXML
     private TableColumn<matiere, String> dispo_v;
     @FXML
-    private TableColumn<matiere, Integer> id_techer_v;
-    @FXML
     private Button modif_btn;
+    @FXML
+    private TableView<matiere> matiereview;
+    @FXML
+    private TableColumn<matiere, Integer> id_teacher_v;
 
   
     @FXML
