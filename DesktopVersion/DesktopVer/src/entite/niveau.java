@@ -25,6 +25,13 @@ public class niveau {
         this.id_n=id;
 
     }
+     public niveau(int id_n, String nom_niv,int id_teacher) {
+        this.id_n = id_n;
+        this.nom_niv = nom_niv;
+        this.id_teacher = id_teacher;
+    }
+
+   
 
 
     public int getId_n() {

@@ -53,12 +53,13 @@ public class NiveauController  {
     }    
     @FXML
     public void btnSupp1Click(){
-         niveau_service ns =new niveau_service();
+         
           niveau n = new niveau(Integer.valueOf(Idn_tf.getId()));
-    ns.supprimerNiveau(n);
+          niveau_service ns =new niveau_service();
+          ns.supprimerNiveau(n);
     }
     public void btnmodif1Click(){
-         niveau n = new niveau(nomniveau_tf.getText(),  Integer.valueOf(id_teacher_tf.getText()));
+         niveau n = new niveau(Integer.valueOf(Idn_tf.getText()),nomniveau_tf.getText(),  Integer.valueOf(id_teacher_tf.getText()));
         niveau_service ns=new niveau_service();
        ns.modifierNiveau(n) ;
     

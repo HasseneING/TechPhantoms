@@ -24,11 +24,11 @@ public class DesktopVer extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-<<<<<<< HEAD
+
         Parent root = FXMLLoader.load(getClass().getResource("matiere_int.fxml"));
-=======
-        Parent root = FXMLLoader.load(getClass().getResource("admin_reviews.fxml"));
->>>>>>> Main
+
+        
+
         primaryStage.setTitle("9arrini");
 
         primaryStage.setScene(new Scene (root,1100,600));

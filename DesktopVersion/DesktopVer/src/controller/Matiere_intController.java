@@ -8,6 +8,9 @@ package controller;
 import entite.matiere;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -15,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import service.matiere_service;
 
 /**
@@ -23,6 +27,7 @@ import service.matiere_service;
  * @author PC
  */
 public class Matiere_intController {
+public ObservableList<matiere> data = FXCollections.observableArrayList() ; 
 
     @FXML
     private TextField type;
@@ -52,6 +57,8 @@ public class Matiere_intController {
     private TableView<matiere> matiereview;
     @FXML
     private TableColumn<matiere, Integer> id_teacher_v;
+    @FXML
+    private Button affich;
 
   
     @FXML
@@ -63,6 +70,9 @@ public class Matiere_intController {
         
         
     }    
+    public void initialize(URL url, ResourceBundle rb) {
+       
+    }   
     @FXML
             
     public void btnSuppClick(){
@@ -76,4 +86,22 @@ public class Matiere_intController {
         matiere_service ms=new matiere_service();
        ms.modifierMatiere(m) ;
     }
-}
+
+    @FXML
+    /*private void afficherM() {
+          matiere_service ms=new matiere_service();
+         System.out.print("ee");
+         
+       id_v.setCellValueFactory (new PropertyValueFactory <matiere,Integer>("Id"));
+    
+    nom_v.setCellValueFactory (new PropertyValueFactory <matiere,String>("nom"));
+    
+    type_v.setCellValueFactory (new PropertyValueFactory <matiere,String>("type"));
+    
+    dispo_v.setCellValueFactory (new PropertyValueFactory <matiere,String>("diponibilité"));
+
+    id_teacher_v.setCellValueFactory (new PropertyValueFactory <matiere,Integer>("Id"));
+        matiereview.setItems(ms.afficherMatiere());
+    }*/
+    
+

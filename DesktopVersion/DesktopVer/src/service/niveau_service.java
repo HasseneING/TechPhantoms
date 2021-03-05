@@ -49,7 +49,7 @@ public class niveau_service {
 
     public void modifierNiveau(niveau n) {
 
-        String req = "update nom set nom_niv=? , id_teacher=? where id_n=?";
+        String req = "update niveau set nom_niv=? , id_teacher=? where id_n=?";
 
         try {
             pst = conn.prepareStatement(req);
@@ -68,7 +68,7 @@ public class niveau_service {
         String req = "delete from niveau  where id_n=?";
 
         try {
-
+            pst = conn.prepareStatement(req);
             pst.setInt(1, n.getId_n());
             pst.executeUpdate();
 

@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.cell.PropertyValueFactory;
 import utils.DataSource;
 
@@ -23,6 +25,7 @@ import utils.DataSource;
  * @author PC
  */
 public class matiere_service {
+    public ObservableList<matiere> data = FXCollections.observableArrayList() ; 
 
     private Statement ste;
     private PreparedStatement pst;
@@ -83,29 +86,22 @@ public class matiere_service {
         }
 
     }
-    public void afficherMatiere (){
+  /*  public ObservableList<matiere> afficherMatiere (){
         
-    
+       
+
     String sql= "select * from matiere";
     try {
     ste=conn.prepareStatement(sql);
-    result=pst.executeQuery();
-    while(result.next()){
-        data.add (new matiere (result.getInt("id")),result.getString("nom"),result.getString("type"),result.getString("disponibilité"),result.getInt("id_teacher")) ;
+    rs=pst.executeQuery();
+    while(rs.next()){
+        data.add (new matiere (rs.getString("nom"),rs.getString("type"),rs.getString("disponibilité"),rs.getInt("id_teacher")) );
     }
-    } catch (SQLExeption e){ system.out.print(e); 
+    } catch (SQLException e){ System.out.print(e); 
     
-    }
-    id_v.setCellValueFactory (new PropertyValueFactory <matiere,Integer>("Id"));
+    } return data ; 
     
-    nom_v.setCellValueFactory (new PropertyValueFactory <matiere,String>("nom"));
-    
-    type_v.setCellValueFactory (new PropertyValueFactory <matiere,String>("type"));
-    
-    dispo_v.setCellValueFactory (new PropertyValueFactory <matiere,String>("diponibilité"));
-
-    id_teacher_v.setCellValueFactory (new PropertyValueFactory <matiere,Integer>("Id"));
-    matiereview.SetItems(data);
-}
+   
+}*/
  
 }
