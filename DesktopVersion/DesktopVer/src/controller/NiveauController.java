@@ -50,7 +50,6 @@ public class NiveauController  {
           niveau n = new niveau(Integer.valueOf(Idn_tf.getId()));
     ns.supprimerNiveau(n);
     }
-    @FXML
     public void btnmodif1Click(){
          niveau n = new niveau(nomniveau_tf.getText(),  Integer.valueOf(id_teacher_tf.getText()));
         niveau_service ns=new niveau_service();

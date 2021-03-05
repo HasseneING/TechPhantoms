@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane id="AnchorPane" prefHeight="451.0" prefWidth="686.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="206.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your feedback has been submited, Thank you ! " />
+      <Rating layoutX="86.0" layoutY="99.0" />
+   </children>
+</AnchorPane>

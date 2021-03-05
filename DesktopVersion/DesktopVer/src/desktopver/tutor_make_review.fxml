@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.Rating?>
+<?import org.controlsfx.control.textfield.CustomTextField?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="502.0" prefWidth="730.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1">
+   <children>
+      <Rating layoutX="241.0" layoutY="333.0" />
+      <TextArea layoutX="244.0" layoutY="164.0" prefHeight="98.0" prefWidth="351.0" />
+      <Text layoutX="24.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you recommend this training?" />
+      <Text layoutX="24.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating :" />
+      <Text layoutX="24.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment :" />
+      <Text layoutX="24.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student :" />
+      <CustomTextField layoutX="244.0" layoutY="59.0" prefHeight="86.0" prefWidth="104.0" />
+      <Text layoutX="382.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="His name" />
+      <RadioButton layoutX="252.0" layoutY="389.0" mnemonicParsing="false" text="YES " />
+      <RadioButton layoutX="362.0" layoutY="389.0" mnemonicParsing="false" text="NO" />
+      <Button layoutX="467.0" layoutY="432.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="130.0" text="Submit feedback" />
+      <Text layoutX="467.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Excellent !" />
+      <Text layoutX="202.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Houni message d'erreur" />
+      <Text layoutX="24.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discipline : " />
+      <TextField layoutX="244.0" layoutY="290.0" prefHeight="26.0" prefWidth="33.0" />
+      <Text layoutX="296.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/ 10" />
+   </children>
+</AnchorPane>

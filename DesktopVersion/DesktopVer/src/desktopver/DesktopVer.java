@@ -26,7 +26,10 @@ public class DesktopVer extends Application {
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("availabilitySchedule.fxml"));
         primaryStage.setTitle("9arrini");
+
         primaryStage.setScene(new Scene (root,800,600));
+
+        
         primaryStage.show();
                 
     
