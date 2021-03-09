@@ -14,6 +14,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import utils.DataSource;
 
 /**
@@ -76,5 +78,18 @@ public class niveau_service {
             Logger.getLogger(niveau_service.class.getName()).log(Level.SEVERE, null, ex);
 
         }
+    }
+    public ObservableList<niveau> readAll() throws SQLException {
+ObservableList<niveau> arr =FXCollections.observableArrayList();
+ste=conn.createStatement();
+    ResultSet rs=ste.executeQuery("select * from niveau");
+     while (rs.next()) {                
+               
+               String nom=rs.getString(2);
+               int idt=rs.getInt(3);
+               niveau n=new niveau( nom,idt);
+     arr.add(n);
+     }
+    return arr;
     }
 }

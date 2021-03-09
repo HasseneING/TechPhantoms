@@ -86,7 +86,7 @@ public class matiere_service {
         }
 
     }
-  /*  public ObservableList<matiere> afficherMatiere (){
+   /* public ObservableList<matiere> afficherMatiere (){
         
        
 
@@ -104,4 +104,38 @@ public class matiere_service {
    
 }*/
  
+public ObservableList<matiere> readAll() throws SQLException {
+ObservableList<matiere> arr =FXCollections.observableArrayList();
+ste=conn.createStatement();
+    ResultSet rs=ste.executeQuery("select * from matiere");
+     while (rs.next()) {                
+               int id=rs.getInt(1);
+               String nom=rs.getString(2);
+               String type=rs.getString(3);
+               String disponibilite=rs.getString(4);
+               int idt=rs.getInt(5);
+               matiere m=new matiere(id, nom, type, disponibilite,idt);
+     arr.add(m);
+     }
+    return arr;
+    }
+ 
+
+    public List<matiere> rechercher(matiere m) throws SQLException {
+        List<matiere> list=new ArrayList<>();
+        String req = "select * from `matiere` where `nom` = '"+m.getNom()+"';";
+        try {
+            ste = conn.createStatement();
+            ResultSet rs = ste.executeQuery(req);
+            while(rs.next()){
+               list.add(new matiere (rs.getInt(1), rs.getString(2), rs.getString(3),rs.getString(4), rs.getInt(5)));
+            }
+        } 
+        catch (SQLException ex) {
+            System.out.println(ex);        
+        }
+        return list;
+}
+
+
 }

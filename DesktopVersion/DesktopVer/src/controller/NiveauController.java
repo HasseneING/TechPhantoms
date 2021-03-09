@@ -5,13 +5,16 @@
  */
 package controller;
 
-import entite.matiere;
 import entite.niveau;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import service.niveau_service;
@@ -23,6 +26,8 @@ import service.niveau_service;
  */
 public class NiveauController  {
 
+   
+    public ObservableList<niveau> data = FXCollections.observableArrayList() ; 
     @FXML
     private TextField Idn_tf;
     @FXML
@@ -36,32 +41,70 @@ public class NiveauController  {
     @FXML
     private Button modif1;
     @FXML
-    private TableColumn<niveau, String> nomniv_v;
+    private Label tnom1;
     @FXML
-    private TableColumn<niveau, Integer> idteach_v;
-    @FXML
-    private TableColumn<niveau, Integer> idn_v;
+    private ListView<niveau> listniveau;
 
-     @FXML
-    public void btnAjout1Clicked()  {
+     public void initialize(URL url, ResourceBundle rb) {
+         niveau n =new niveau();
+            niveau_service ser = new niveau_service();
+        /*id_v.setCellValueFactory(new PropertyValueFactory<>("id"));
+        nom_v.setCellValueFactory(new PropertyValueFactory<>("nom"));
+            type_v.setCellValueFactory(new PropertyValueFactory<>("type"));
+            dispo_v.setCellValueFactory(new PropertyValueFactory<>("disponibilité"));*/
+            
+        try {
+            data = ser.readAll();
+            System.out.println(data.size());
+        } catch (SQLException ex) {
+            System.out.println(ex);        }
+        
+        listniveau.setItems((ObservableList<niveau>) data);
+        //matiereview.setEditable(true);
+
+    }    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    @FXML
+    public void btnAjout1Clicked() throws SQLException  {
          niveau n = new niveau(nomniveau_tf.getText(), Integer.valueOf(id_teacher_tf.getText()));
          
     niveau_service ns =new niveau_service();
     ns.ajouterNiveau(n);
-        
+       data.clear();
+      data = ns.readAll();
+         listniveau.setItems((ObservableList<niveau>) data); 
         
     }    
     @FXML
-    public void btnSupp1Click(){
+    public void btnSupp1Click() throws SQLException{
          
           niveau n = new niveau(Integer.valueOf(Idn_tf.getId()));
           niveau_service ns =new niveau_service();
           ns.supprimerNiveau(n);
+          data.clear();
+      data = ns.readAll();
+         listniveau.setItems((ObservableList<niveau>) data);
+          
     }
-    public void btnmodif1Click(){
+    public void btnmodif1Click() throws SQLException{
          niveau n = new niveau(Integer.valueOf(Idn_tf.getText()),nomniveau_tf.getText(),  Integer.valueOf(id_teacher_tf.getText()));
         niveau_service ns=new niveau_service();
        ns.modifierNiveau(n) ;
+        data.clear();
+      data = ns.readAll();
+         listniveau.setItems((ObservableList<niveau>) data);
     
+    }
+
+    public void setTnom1(Label tnom) {
+        this.tnom1=tnom; //To change body of generated methods, choose Tools | Templates.
     }
 }

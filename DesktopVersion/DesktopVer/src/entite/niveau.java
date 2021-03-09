@@ -31,6 +31,10 @@ public class niveau {
         this.id_teacher = id_teacher;
     }
 
+    public niveau() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
    
 
 
@@ -57,7 +61,10 @@ public class niveau {
     public void setId_teacher(int id_teacher) {
         this.id_teacher = id_teacher;
     }
-   
+    @Override
+    public String toString() {
+        return "matiere{" + "nom=" + nom_niv + ", id_teacher=" + id_teacher +'}';
+    }
     
     
    

@@ -36,6 +36,9 @@ public class matiere {
         this.id_teacher = id_teacher;
     }
 
+    public matiere() {
+    }
+
 
     /**
      * @return the id
@@ -106,6 +109,15 @@ public class matiere {
     public void setId_teacher(int id_teacher) {
         this.id_teacher = id_teacher;
     }
+
+    @Override
+    public String toString() {
+        return "nom=" + nom + ", type=" + type + ", disponibilit\u00e9=" + disponibilité + ", id_teacher=" + id_teacher ;
+    }
+
+    
+
+
     
    
     
