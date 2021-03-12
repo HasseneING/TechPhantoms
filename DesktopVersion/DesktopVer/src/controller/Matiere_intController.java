@@ -8,6 +8,7 @@ package controller;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Phrase;
+import static com.itextpdf.text.pdf.PdfFileSpecification.url;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -20,6 +21,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -75,6 +78,8 @@ public ObservableList<matiere> data = FXCollections.observableArrayList() ;
     private Button telecharger_;
     @FXML
     private TextField rechercher;
+    @FXML
+    private Button sort_btn;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -166,7 +171,9 @@ public ObservableList<matiere> data = FXCollections.observableArrayList() ;
             String req = "Select * from matiere ";
             ps = cnx.prepareCall(req);
             rs=ps.executeQuery();
+            
             PdfPTable t = new PdfPTable(5);
+            
             PdfPCell c1 = new PdfPCell(new Phrase("Id"));
             t.addCell(c1);
             PdfPCell c2 = new PdfPCell(new Phrase("Nom"));
@@ -185,8 +192,9 @@ public ObservableList<matiere> data = FXCollections.observableArrayList() ;
                 t.addCell(rs.getString(3));
                 t.addCell(rs.getString(4));
                 t.addCell(rs.getString(5));
-                document.add(t);
+                
             }
+            document.add(t);
             document.close();
             System.out.println("finished");
         } catch (DocumentException ex) {
@@ -208,7 +216,7 @@ public ObservableList<matiere> data = FXCollections.observableArrayList() ;
             listmatiere.setItems((ObservableList<matiere>) data);
             } else if (ser.rechercher(m).isEmpty()) {
                 System.out.println("vide");
-                JOptionPane.showMessageDialog(null, "Veuillez sélectionner le nom du centre à chercher");
+                JOptionPane.showMessageDialog(null, "Veuillez sélectionner le nom de la matière à chercher");
                 data = ser.readAll();
                 listmatiere.setItems((ObservableList<matiere>) data);
             }
@@ -218,8 +226,20 @@ public ObservableList<matiere> data = FXCollections.observableArrayList() ;
 
     }
 
-
-
+   
+     @FXML
+     public void btnSortClicked() throws SQLException  {
+        matiere m =new matiere();
+            matiere_service ser = new matiere_service();
+         data = ser.readAllTrie();
+       
+            
+            listmatiere.setItems((ObservableList<matiere>) data);
+     
+     
+     
+     }
+    
 
 
 

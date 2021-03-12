@@ -31,7 +31,7 @@ public class DesktopVer extends Application {
 
         primaryStage.setTitle("9arrini");
 
-        primaryStage.setScene(new Scene (root,1100,600));
+        primaryStage.setScene(new Scene (root,600,450));
 
         
         primaryStage.show();

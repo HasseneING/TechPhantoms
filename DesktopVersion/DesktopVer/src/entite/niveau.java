@@ -32,8 +32,12 @@ public class niveau {
     }
 
     public niveau() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+       
+
+   
+
+  
 
    
 
@@ -63,7 +67,7 @@ public class niveau {
     }
     @Override
     public String toString() {
-        return "matiere{" + "nom=" + nom_niv + ", id_teacher=" + id_teacher +'}';
+        return "niveau{" + "nom=" + nom_niv + ", id_teacher=" + id_teacher +'}';
     }
     
     

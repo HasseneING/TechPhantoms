@@ -4,25 +4,44 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NiveauController">
    <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@e.jpg" />
+         </image>
+      </ImageView>
       <Label layoutX="246.0" layoutY="-15.0" prefHeight="94.0" prefWidth="161.0" text="Niveau">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold Italic" size="18.0" />
          </font></Label>
-      <TextField fx:id="Idn_tf" layoutX="90.0" layoutY="88.0" />
-      <TextField fx:id="nomniveau_tf" layoutX="90.0" layoutY="136.0" />
-      <TextField fx:id="id_teacher_tf" layoutX="90.0" layoutY="188.0" />
-      <Button fx:id="Ajout1" layoutX="19.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnAjout1Clicked" prefHeight="25.0" prefWidth="70.0" text="ajouter" />
-      <Button fx:id="Supp1" layoutX="261.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnSupp1Click" text="supprimer" />
-      <Label layoutX="19.0" layoutY="92.0" text="Id_n :" />
-      <Label layoutX="14.0" layoutY="140.0" text="Nom_Niveau :" />
-      <Label layoutX="17.0" layoutY="192.0" text="Id_teacher :" />
-      <Button fx:id="modif1" layoutX="139.0" layoutY="302.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="modifier" />
+      <TextField fx:id="Idn_tf" layoutX="76.0" layoutY="88.0" prefHeight="25.0" prefWidth="65.0" />
+      <TextField fx:id="nomniveau_tf" layoutX="80.0" layoutY="136.0" prefHeight="25.0" prefWidth="56.0" />
+      <TextField fx:id="id_teacher_tf" layoutX="80.0" layoutY="188.0" prefHeight="25.0" prefWidth="56.0" />
+      <Button fx:id="Ajout1" layoutX="19.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnAjout1Clicked" prefHeight="25.0" prefWidth="70.0" text="Add" />
+      <Button fx:id="Supp1" layoutX="261.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnSupp1Click" text="Delete" />
+      <Label layoutX="4.0" layoutY="92.0" text="Id">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <Label layoutY="140.0" text="Nom_Niveau :">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <Label layoutX="1.0" layoutY="192.0" text="Id_teacher :">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <Button fx:id="modif1" layoutX="139.0" layoutY="302.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Edit" />
+      <ListView fx:id="listniveau" layoutX="201.0" layoutY="64.0" opacity="0.6" prefHeight="224.0" prefWidth="349.0" />
+      <TextField fx:id="recherchetf" layoutX="358.0" layoutY="336.0" prefHeight="25.0" prefWidth="82.0" />
+      <Button fx:id="rechercher" layoutX="476.0" layoutY="336.0" mnemonicParsing="false" onAction="#rechercher" prefHeight="25.0" prefWidth="96.0" text="Search" />
       <Label fx:id="tnom1" layoutX="33.0" layoutY="24.0" />
-      <ListView fx:id="listniveau" layoutX="286.0" layoutY="70.0" prefHeight="209.0" prefWidth="267.0" />
+      <Button fx:id="sort_btn" layoutX="485.0" layoutY="290.0" mnemonicParsing="false" onAction="#btnSortClicked" prefHeight="25.0" prefWidth="65.0" text="Sort" />
    </children>
 </AnchorPane>

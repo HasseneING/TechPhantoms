@@ -12,6 +12,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
@@ -92,4 +94,44 @@ ste=conn.createStatement();
      }
     return arr;
     }
+    
+      public List<niveau> rechercher(niveau n) throws SQLException {
+        List<niveau> list=new ArrayList<>();
+        String req = "select * from niveau  where nom_niv = '"+n.getNom_niv()+"';";
+        try {
+            ste = conn.createStatement();
+            ResultSet rs = ste.executeQuery(req);
+            while(rs.next()){
+               list.add(new niveau (rs.getInt(1), rs.getString(2), rs.getInt(3)));
+            }
+        } 
+        catch (SQLException ex) {
+            System.out.println(ex);        
+        }
+        return list;
+}
+
+      
+       public ObservableList<niveau> readAllTrie() throws SQLException {
+        ObservableList<niveau> arr =FXCollections.observableArrayList();
+        String req = "select * from niveau order by nom_niv DESC";
+       
+        try
+        {
+            ste = conn.createStatement();
+            ResultSet rs = ste.executeQuery(req);
+            while(rs.next())
+                arr.add(new niveau (rs.getInt(1), rs.getString(2), rs.getInt(3)));
+        }
+        catch(SQLException ex)
+        {
+            System.out.println(ex);
+        }
+        return arr;
+    }
+    
+    
+    
+    
+    
 }

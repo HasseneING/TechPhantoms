@@ -11,12 +11,14 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
+import javax.swing.JOptionPane;
 import service.niveau_service;
 
 /**
@@ -44,23 +46,27 @@ public class NiveauController  {
     private Label tnom1;
     @FXML
     private ListView<niveau> listniveau;
+    @FXML
+    private TextField recherchetf;
+    @FXML
+    private Button rechercher;
+    @FXML
+    private Button sort_btn;
+
 
      public void initialize(URL url, ResourceBundle rb) {
          niveau n =new niveau();
             niveau_service ser = new niveau_service();
-        /*id_v.setCellValueFactory(new PropertyValueFactory<>("id"));
-        nom_v.setCellValueFactory(new PropertyValueFactory<>("nom"));
-            type_v.setCellValueFactory(new PropertyValueFactory<>("type"));
-            dispo_v.setCellValueFactory(new PropertyValueFactory<>("disponibilité"));*/
-            
+      
         try {
             data = ser.readAll();
             System.out.println(data.size());
+            listniveau.setItems((ObservableList<niveau>) data);
         } catch (SQLException ex) {
             System.out.println(ex);        }
         
-        listniveau.setItems((ObservableList<niveau>) data);
-        //matiereview.setEditable(true);
+        
+        
 
     }    
     
@@ -107,4 +113,45 @@ public class NiveauController  {
     public void setTnom1(Label tnom) {
         this.tnom1=tnom; //To change body of generated methods, choose Tools | Templates.
     }
+    
+    @FXML
+    private void rechercher(ActionEvent event) {
+        
+        try {
+            niveau n = new niveau();
+            n.setNom_niv(recherchetf.getText());
+            System.out.println(n);
+            niveau_service ser = new niveau_service();
+            if (!(ser.rechercher(n).isEmpty())) {
+                data.clear();
+               data.addAll(ser.rechercher(n));
+            listniveau.setItems((ObservableList<niveau>) data);
+            } else if (ser.rechercher(n).isEmpty()) {
+               // System.out.println("vide");
+                //JOptionPane.showMessageDialog(null, "Veuillez sélectionner le nom du niveau à chercher");
+                data = ser.readAll();
+                listniveau.setItems((ObservableList<niveau>) data);
+            }
+            System.out.println(ser.rechercher(n));
+        } catch (SQLException ex) {
+            System.out.println(ex);        }
+    
+    
+    } 
+    
+    
+    @FXML
+     public void btnSortClicked() throws SQLException  {
+        niveau n =new niveau();
+            niveau_service ser = new niveau_service();
+         data = ser.readAllTrie();
+        data.clear();
+      data = ser.readAll();
+         
+            
+            listniveau.setItems((ObservableList<niveau>) data);
+     
+     
+     
+     }
 }
