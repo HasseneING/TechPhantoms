@@ -31,6 +31,7 @@ public class HomeController implements Initializable {
     private Button niv_btn;
     @FXML
     private Label tnom;
+    private Label tnom1;
 
     /**
      * Initializes the controller class.
@@ -38,7 +39,11 @@ public class HomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    } 
+      public void setTnom1(Label tnom) {
+        this.tnom1=tnom; 
+    }
+
     @FXML
       private void matiere (ActionEvent event) {
         try {
@@ -77,4 +82,5 @@ public class HomeController implements Initializable {
         }
         
     }
+      
 }

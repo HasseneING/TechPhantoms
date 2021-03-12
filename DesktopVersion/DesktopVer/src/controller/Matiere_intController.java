@@ -12,6 +12,7 @@ import static com.itextpdf.text.pdf.PdfFileSpecification.url;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import desktopver.HomeController;
 import entite.matiere;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -28,7 +29,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -240,11 +243,12 @@ public ObservableList<matiere> data = FXCollections.observableArrayList() ;
      
      }
     
+        
+    }
 
 
 
 
-}
 
 
 

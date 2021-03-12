@@ -13,6 +13,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -26,7 +27,7 @@ import service.niveau_service;
  *
  * @author PC
  */
-public class NiveauController  {
+public class NiveauController  implements Initializable{
 
    
     public ObservableList<niveau> data = FXCollections.observableArrayList() ; 
@@ -53,21 +54,19 @@ public class NiveauController  {
     @FXML
     private Button sort_btn;
 
-
+@Override
      public void initialize(URL url, ResourceBundle rb) {
          niveau n =new niveau();
             niveau_service ser = new niveau_service();
-      
-        try {
+       try {
             data = ser.readAll();
             System.out.println(data.size());
-            listniveau.setItems((ObservableList<niveau>) data);
         } catch (SQLException ex) {
             System.out.println(ex);        }
         
+        listniveau.setItems((ObservableList<niveau>) data);
         
-        
-
+     
     }    
     
     

@@ -81,18 +81,22 @@ public class niveau_service {
 
         }
     }
-    public ObservableList<niveau> readAll() throws SQLException {
-ObservableList<niveau> arr =FXCollections.observableArrayList();
-ste=conn.createStatement();
-    ResultSet rs=ste.executeQuery("select * from niveau");
-     while (rs.next()) {                
-               
-               String nom=rs.getString(2);
-               int idt=rs.getInt(3);
-               niveau n=new niveau( nom,idt);
-     arr.add(n);
-     }
-    return arr;
+   public ObservableList<niveau> readAll() throws SQLException {
+        ObservableList<niveau> arr =FXCollections.observableArrayList();
+        String req = "select * from niveau";
+       
+        try
+        {
+            ste = conn.createStatement();
+            ResultSet rs = ste.executeQuery(req);
+            while(rs.next())
+            {arr.add(new niveau ( rs.getString(2), rs.getInt(3)));}
+        }
+        catch(SQLException ex)
+        {
+            System.out.println(ex);
+        }
+        return arr;
     }
     
       public List<niveau> rechercher(niveau n) throws SQLException {
