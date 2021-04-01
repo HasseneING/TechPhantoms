@@ -14,7 +14,7 @@
     <children>
         <Pane prefHeight="173.0" prefWidth="980.0" style="-fx-background-color: #2D75E8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Label layoutX="130.0" layoutY="44.0" text="Admin Space" textFill="WHITE">
+                <Label layoutX="130.0" layoutY="44.0" text="Student Space" textFill="WHITE">
                     <font>
                         <Font size="48.0" />
                     </font>
@@ -37,32 +37,32 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button fx:id="btnDashboard" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="Users Management">
+                <Button fx:id="btnProfile" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="Profile">
                     <graphic>
                         <FontAwesomeIconView fill="#2d75e8" glyphName="HOME" size="80" />
                     </graphic>
                 </Button>
-                <Button fx:id="btnStudents" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="Servers Management" GridPane.columnIndex="1">
+                <Button fx:id="btnCourses" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="Courses" GridPane.columnIndex="1">
                     <graphic>
                         <FontAwesomeIconView fill="#2d75e8" glyphName="GROUP" size="80" />
                     </graphic>
                 </Button>
-                <Button fx:id="btn_Timetable" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="Claims Management" GridPane.columnIndex="2">
+                <Button fx:id="btn_Timetable" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="Schedule" GridPane.columnIndex="2">
                     <graphic>
                         <FontAwesomeIconView fill="#2d75e8" glyphName="CALENDAR_CHECK_ALT" size="80" />
                     </graphic>
                 </Button>
-                <Button fx:id="btnSettings" contentDisplay="TOP" mnemonicParsing="false" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="ChatRoom" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <Button fx:id="btnChat" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="ChatRoom" GridPane.columnIndex="2" GridPane.rowIndex="1">
                     <graphic>
                         <FontAwesomeIconView fill="#2d75e8" glyphName="SLIDERS" size="80" />
                     </graphic>
                 </Button>
-                <Button fx:id="btnUpdate" contentDisplay="TOP" mnemonicParsing="false" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="Review" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Button fx:id="btnReview" contentDisplay="TOP" mnemonicParsing="false"  onAction="#handleButtonClicks" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="Review" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <graphic>
                         <FontAwesomeIconView fill="#2d75e8" glyphName="EXCHANGE" size="80" />
                     </graphic>
                 </Button>
-                <Button fx:id="btnClasses" contentDisplay="TOP" mnemonicParsing="false" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="VideoCall" GridPane.rowIndex="1">
+                <Button fx:id="btnVideo" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="VideoCall" GridPane.rowIndex="1">
                     <graphic>
                         <FontAwesomeIconView fill="#2d75e8" glyphName="INDENT" size="80" />
                     </graphic>

@@ -47,24 +47,14 @@
                         <FontAwesomeIconView fill="#2d75e8" glyphName="GROUP" size="80" />
                     </graphic>
                 </Button>
-                <Button fx:id="btn_Timetable" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="Claims Management" GridPane.columnIndex="2">
+                <Button fx:id="btn_Timetable" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleButtonClicks" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="Claims Management" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <graphic>
                         <FontAwesomeIconView fill="#2d75e8" glyphName="CALENDAR_CHECK_ALT" size="80" />
                     </graphic>
                 </Button>
-                <Button fx:id="btnSettings" contentDisplay="TOP" mnemonicParsing="false" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="ChatRoom" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <Button fx:id="btnSettings" contentDisplay="TOP" mnemonicParsing="false" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="Payment Management" GridPane.columnIndex="2" >
                     <graphic>
                         <FontAwesomeIconView fill="#2d75e8" glyphName="SLIDERS" size="80" />
-                    </graphic>
-                </Button>
-                <Button fx:id="btnUpdate" contentDisplay="TOP" mnemonicParsing="false" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="Review" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                    <graphic>
-                        <FontAwesomeIconView fill="#2d75e8" glyphName="EXCHANGE" size="80" />
-                    </graphic>
-                </Button>
-                <Button fx:id="btnClasses" contentDisplay="TOP" mnemonicParsing="false" prefHeight="181.0" prefWidth="242.0" stylesheets="@../../css/fullpackstyling.css" text="VideoCall" GridPane.rowIndex="1">
-                    <graphic>
-                        <FontAwesomeIconView fill="#2d75e8" glyphName="INDENT" size="80" />
                     </graphic>
                 </Button>
             </children>

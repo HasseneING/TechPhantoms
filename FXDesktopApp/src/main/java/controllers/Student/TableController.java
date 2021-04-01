@@ -13,16 +13,17 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.ModelTable;
 
-/**
- *
- * @author USER
- */
-public class TableController {
+import javax.sql.DataSource;
+
+
+public class TableController implements Initializable {
 
     @FXML
     private TableView<ModelTable> table;
@@ -49,7 +50,7 @@ public class TableController {
     public void initialize(URL location, ResourceBundle resources) {
         
         try {
-            Connection con = DBConnector.getConnection();
+            Connection con = DataBase.DataSource.getInstance().getCnx();
             
             ResultSet rs = con.createStatement().executeQuery("select * from rec");
             
@@ -122,6 +123,6 @@ public class TableController {
             
             table.setItems(sortedData);
             
-    }*/
+    }
     
 }

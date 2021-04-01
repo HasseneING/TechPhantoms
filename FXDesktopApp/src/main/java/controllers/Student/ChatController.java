@@ -15,43 +15,21 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class ChatController implements Initializable {
 
-
-
+    @FXML
+    private Button btnClaim;
     @FXML
     private Button btnChat;
-    @FXML
-    private Button btnVideo;
-    @FXML
-    private Button btnProfile;
-    @FXML
-    private Button btn_Timetable;
 
-    @FXML
-    private Button btnReview;
-
-    @FXML
-    private Button btnCourses;
 
 
     @FXML
     private void handleButtonClicks(javafx.event.ActionEvent mouseEvent) {
         if (mouseEvent.getSource() == btnChat) {
             loadStage("Chat.fxml");
-        } else if (mouseEvent.getSource() == btnVideo) {
-            loadStage("MeetRoom.fxml");
-        } else if (mouseEvent.getSource() == btn_Timetable) {
-            loadStage("Timetable.fxml");
-        }
-        else if (mouseEvent.getSource() == btnReview) {
-            loadStage("Review.fxml");
-        }
-        else  if (mouseEvent.getSource() == btnCourses) {
-            loadStage("btnCourses.fxml");
-        }
-        else if (mouseEvent.getSource() == btnCourses) {
-            loadStage("btnProfile.fxml");
+        } else if (mouseEvent.getSource() == btnClaim) {
+            loadStage("SideBar.fxml");
         }
     }
 

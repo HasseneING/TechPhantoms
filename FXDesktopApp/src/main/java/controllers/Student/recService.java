@@ -19,7 +19,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import org.controlsfx.control.Notifications;
 
-
 public class recService implements Initializable {
 
     @FXML
