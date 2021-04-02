@@ -19,17 +19,17 @@ import java.util.ResourceBundle;
 public class VideoCallController implements Initializable {
 
     @FXML
-    private Button btnClaim;
+    private Button btnMeet;
     @FXML
-    private Button btnChat;
+    private Button btnServer;
 
 
 
     @FXML
     private void handleButtonClicks(javafx.event.ActionEvent mouseEvent) {
-        if (mouseEvent.getSource() == btnChat) {
+        if (mouseEvent.getSource() == btnMeet) {
             loadStage("JoinMeet.fxml");
-        } else if (mouseEvent.getSource() == btnClaim) {
+        } else if (mouseEvent.getSource() == btnServer) {
             loadStage("JoinServer.fxml");
         }
     }
