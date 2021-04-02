@@ -29,7 +29,7 @@ public class ChatController implements Initializable {
         if (mouseEvent.getSource() == btnChat) {
             loadStage("Chat.fxml");
         } else if (mouseEvent.getSource() == btnClaim) {
-            loadStage("SideBar.fxml");
+            loadStage("AddClaim.fxml");
         }
     }
 
