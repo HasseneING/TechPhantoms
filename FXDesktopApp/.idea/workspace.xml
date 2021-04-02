@@ -72,16 +72,16 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/controllers/Student" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/fxml/Student" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MJ-INFO\Desktop\Project\TechPhantoms\FXDesktopApp\src\main\java\fxml\Student" />
       <recent name="C:\Users\MJ-INFO\Desktop\Project\TechPhantoms\FXDesktopApp\src\main\java\controllers\Student" />
       <recent name="C:\Users\MJ-INFO\Desktop\Project\TechPhantoms\FXDesktopApp\src\main\java\fxml\Admin" />
-      <recent name="C:\Users\MJ-INFO\Desktop\Project\TechPhantoms\FXDesktopApp\src\main\java\fxml\Student" />
       <recent name="C:\Users\MJ-INFO\Desktop\Project\TechPhantoms\FXDesktopApp\src\main\java\fxml\Teacher" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -95,7 +95,7 @@
       <recent name="fxml.Admin" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Mainone">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controllers.Main" />
       <module name="FXDesktopApp.main" />
@@ -162,7 +162,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617312464097</updated>
-      <workItem from="1617312465238" duration="20384000" />
+      <workItem from="1617312465238" duration="27188000" />
     </task>
     <servers />
   </component>
