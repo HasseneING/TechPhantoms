@@ -31,25 +31,20 @@ public class SplashScreenController implements Initializable{
             URL root_url = new File("src/main/java/fxml/SplashScreen.fxml").toURI().toURL();
             AnchorPane pane = FXMLLoader.load(root_url);
             root.getChildren().setAll(pane);
-
             FadeTransition fadeIn = new FadeTransition(Duration.seconds(3), pane);
             fadeIn.setFromValue(0);
             fadeIn.setToValue(1);
-
             fadeIn.setCycleCount(1);
-
             FadeTransition fadeOut = new FadeTransition(Duration.seconds(3), pane);
             fadeOut.setFromValue(1);
             fadeOut.setToValue(0);
             fadeOut.setCycleCount(1);
-
             fadeIn.play();
-
             fadeIn.setOnFinished((e) -> fadeOut.play());
 
             fadeOut.setOnFinished((e) -> {
                 try {
-                    URL root_uurl = new File("src/main/java/fxml/Home.fxml").toURI().toURL();
+                    URL root_uurl = new File("src/main/java/fxml/Student/Home.fxml").toURI().toURL();
                     AnchorPane parentContent = FXMLLoader.load(root_uurl);
                     root.getChildren().setAll(parentContent);
                 } catch (IOException ex) {
