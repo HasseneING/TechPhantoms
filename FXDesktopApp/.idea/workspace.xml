@@ -72,13 +72,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/fxml/Admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/controllers/Student" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MJ-INFO\Desktop\Project\TechPhantoms\FXDesktopApp\src\main\java\controllers\Student" />
       <recent name="C:\Users\MJ-INFO\Desktop\Project\TechPhantoms\FXDesktopApp\src\main\java\fxml\Admin" />
       <recent name="C:\Users\MJ-INFO\Desktop\Project\TechPhantoms\FXDesktopApp\src\main\java\fxml\Student" />
       <recent name="C:\Users\MJ-INFO\Desktop\Project\TechPhantoms\FXDesktopApp\src\main\java\fxml\Teacher" />
@@ -87,16 +88,42 @@
       <recent name="C:\Users\MJ-INFO\Desktop\Project\TechPhantoms\FXDesktopApp\src\main\java\fxml\Student" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="controllers.Teacher" />
       <recent name="controllers.Student" />
+      <recent name="controllers.Teacher" />
       <recent name="controllers.Admin" />
       <recent name="fxml.Teacher" />
       <recent name="fxml.Admin" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Mainone">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controllers.Main" />
+      <module name="FXDesktopApp.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controllers.Student.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Mainone" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controllers.Mainone" />
+      <module name="FXDesktopApp.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server_Socket" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controllers.Student.Server_Socket" />
       <module name="FXDesktopApp.main" />
       <extension name="coverage">
         <pattern>
@@ -121,6 +148,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Server_Socket" />
+        <item itemvalue="Application.Mainone" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -133,7 +162,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617312464097</updated>
-      <workItem from="1617312465238" duration="16110000" />
+      <workItem from="1617312465238" duration="20384000" />
     </task>
     <servers />
   </component>
