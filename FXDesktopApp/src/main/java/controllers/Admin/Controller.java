@@ -17,32 +17,29 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 
-    @FXML
-    private Button btnDashboard;
+
 
     @FXML
-    private Button btnStudents;
-
+    private Button btnUsers;
     @FXML
-    private Button btn_Timetable;
-
+    private Button btnClaims;
     @FXML
-    private Button btnSettings;
-
+    private Button btnServers;
     @FXML
-    private Button btnUpdate;
+    private Button btnPayments;
 
-    @FXML
-    private Button btnClasses;
 
     @FXML
     private void handleButtonClicks(javafx.event.ActionEvent mouseEvent) {
-        if (mouseEvent.getSource() == btnDashboard) {
+        if (mouseEvent.getSource() == btnUsers) {
+            loadStage("Users.fxml");
+        } else if (mouseEvent.getSource() == btnClaims) {
             loadStage("Dashboard.fxml");
-        } else if (mouseEvent.getSource() == btnStudents) {
-            loadStage("Students.fxml");
-        } else if (mouseEvent.getSource() == btn_Timetable) {
-            loadStage("Timetable.fxml");
+        } else if (mouseEvent.getSource() == btnServers) {
+            loadStage("Servers.fxml");
+        }
+        else if (mouseEvent.getSource() == btnPayments) {
+            loadStage("Payments.fxml");
         }
     }
 

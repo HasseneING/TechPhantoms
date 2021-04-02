@@ -40,7 +40,7 @@ public class Controller implements Initializable {
         if (mouseEvent.getSource() == btnChat) {
             loadStage("Chat.fxml");
         } else if (mouseEvent.getSource() == btnVideo) {
-            loadStage("MeetRoom.fxml");
+            loadStage("JoinMeet.fxml");
         } else if (mouseEvent.getSource() == btn_Timetable) {
             loadStage("Timetable.fxml");
         }
