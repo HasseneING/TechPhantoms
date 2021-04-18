@@ -8,6 +8,9 @@ version = '1.0'
 
 repositories {
     mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 dependencies {
@@ -21,3 +24,4 @@ dependencies {
     implementation "com.stripe:stripe-java:20.43.0"
 
 }
+
