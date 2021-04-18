@@ -1,5 +1,6 @@
 package controllers.Student;
 
+import DataBase.DataSource;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
@@ -25,8 +26,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.security.GeneralSecurityException;
-import java.sql.SQLException;
-import java.sql.Timestamp;
+import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -223,18 +223,13 @@ public class AppointementController implements Initializable {
             showAlert(url);
         }
 
-      /*  Connection conn = DataSource.getInstance().getCnx();
-        ResultSet result;
+        Connection conn = DataSource.getInstance().getCnx();
         PreparedStatement pst;
-        String req = "insert into meet (meet_link,meet_teacher) values (?,?)";
+        String req = "insert into meet (meet_link) values (?)";
         pst = conn.prepareStatement(req);
-        //  pst.setInt(1,24);
         pst.setString(1, event_1.getHangoutLink());
-//           pst.setInt(2,UserSession.getInstace());
-        pst.executeUpdate();*/
+        pst.executeUpdate();
     }
-
-
 
 
     public void btnCancel() {

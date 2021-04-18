@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     @FXML
-    private Button btnDashboard;
+    private Button btnVideo;
 
     @FXML
     private Button btnStudents;
@@ -27,22 +27,28 @@ public class Controller implements Initializable {
     private Button btn_Timetable;
 
     @FXML
-    private Button btnSettings;
+    private Button btnChat;
 
     @FXML
-    private Button btnUpdate;
+    private Button btnPayment;
 
     @FXML
-    private Button btnClasses;
+    private Button btnProfile;
 
     @FXML
     private void handleButtonClicks(javafx.event.ActionEvent mouseEvent) {
-        if (mouseEvent.getSource() == btnDashboard) {
-            loadStage("Dashboard.fxml");
+        if (mouseEvent.getSource() == btnVideo) {
+            loadStage("JoinMeet.fxml");
         } else if (mouseEvent.getSource() == btnStudents) {
             loadStage("Students.fxml");
         } else if (mouseEvent.getSource() == btn_Timetable) {
             loadStage("Timetable.fxml");
+        }else if (mouseEvent.getSource() == btnPayment) {
+            loadStage("Payment.fxml");
+        }else if (mouseEvent.getSource() == btnChat) {
+            loadStage("Chat.fxml");
+        }else if (mouseEvent.getSource() == btnProfile) {
+            loadStage("Profile.fxml");
         }
     }
 
@@ -53,7 +59,7 @@ public class Controller implements Initializable {
 
     private void loadStage(String fxml) {
         try {
-            URL root_url = new File("src/main/java/fxml/Admin/"+fxml).toURI().toURL();
+            URL root_url = new File("src/main/java/fxml/Teacher/"+fxml).toURI().toURL();
             URL icon_url = new File("src/main/java/icons/logoo.png").toURI().toURL();
             Parent root = FXMLLoader.load(root_url);
             Stage stage = new Stage();

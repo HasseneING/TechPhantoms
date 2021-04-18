@@ -30,7 +30,7 @@ public class sceneLoader {
             io.printStackTrace();
         }*/
         try {
-            URL root_url = new File("src/main/java/fxml/"+FXMLPage).toURI().toURL();
+            URL root_url = new File("src/main/java/fxml/Student/"+FXMLPage).toURI().toURL();
             URL icon_url = new File("src/main/java/icons/logoo.png").toURI().toURL();
             Parent root = FXMLLoader.load(root_url);
             Stage stage = new Stage();
