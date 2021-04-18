@@ -25,7 +25,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        URL root_url = new File("src/main/java/fxml/Student/make_review.fxml").toURI().toURL();
+        URL root_url = new File("src/main/java/fxml/Admin/admin_reviews.fxml").toURI().toURL();
         Parent parent = FXMLLoader.load(root_url);
         primaryStage.setScene(new Scene(parent));
         primaryStage.setTitle("TalkTo");
