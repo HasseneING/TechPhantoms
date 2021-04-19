@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Card index{% endblock %}
-
+{% block body %}
     <h1>Card index</h1>
 
     <table class="table">
@@ -11,6 +11,10 @@
                 <th>FirstName</th>
                 <th>LastName</th>
                 <th>Email</th>
+                <th>CardNumber</th>
+                <th>MM</th>
+                <th>YY</th>
+                <th>CVV</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -21,6 +25,10 @@
                 <td>{{ card.firstName }}</td>
                 <td>{{ card.lastName }}</td>
                 <td>{{ card.Email }}</td>
+                <td>{{ card.cardNumber }}</td>
+                <td>{{ card.MM }}</td>
+                <td>{{ card.YY }}</td>
+                <td>{{ card.CVV }}</td>
                 <td>
                     <a href="{{ path('card_show', {'id': card.id}) }}" class="btn btn-primary">show</a>
                     <a href="{{ path('card_edit', {'id': card.id}) }}" class="btn btn-primary">edit</a>
@@ -36,3 +44,4 @@
 
     <a href="{{ path('card_new') }}">Create new</a>
 
+{% endblock %}
