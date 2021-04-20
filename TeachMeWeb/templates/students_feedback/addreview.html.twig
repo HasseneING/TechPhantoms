@@ -1,0 +1,27 @@
+
+{% extends 'base.html.twig' %}
+{% block title %}Add New Review !!{% endblock %}
+{% block body %}
+<center>
+    </br>
+    <h1> Write down your feedback !  </h1>
+</br>
+    </br>
+
+{{ form_start(form ) }}
+    {{ form_widget(form) }}
+
+
+    <input   type="reset"  class="btn btn-info "> </input>&nbsp;&nbsp;&nbsp;
+    <a href="{{ asset("RecordVideo") }}"  target="_blank" class="btn btn-success"> Attach Video</a> &nbsp;&nbsp;&nbsp;
+    <button type="submit" class="btn btn-primary">Submit Review </button>
+    <script>
+       // document.getElementById("rating_star_1").className = "star-full";
+    </script>
+    {{ form_end(form) }}
+    </br></br>
+    </br></br>
+
+</center>
+{% endblock %}
+
