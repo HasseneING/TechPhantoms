@@ -14,6 +14,20 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class CardRepository extends ServiceEntityRepository
 {
+
+    public function getdonn($filtre = null)
+    {
+        $query = $this->createQueryBuilder('u');
+
+        if ($filtre != null) {
+            $query->andWhere('u.first_name LIKE :t')
+                ->setParameter(':t', '%' . $filtre . '%');
+        }
+
+        return $query->getQuery()
+            ->getResult();
+    }
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Card::class);

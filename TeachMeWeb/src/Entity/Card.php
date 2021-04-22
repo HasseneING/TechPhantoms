@@ -39,6 +39,10 @@ class Card
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\CardScheme(
+     *     schemes={"VISA"},
+     *     message="Your credit card number is invalid."
+     * )
      */
     private $cardNumber;
 

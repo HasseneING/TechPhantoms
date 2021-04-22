@@ -23,6 +23,9 @@
     })
 
 </script>
+{% block javascripts %}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}
 <div class="container">
     {{ form_start(form , {'attr': {'novalidate': 'novalidate'}}) }}
     {{ form_errors(form) }}
@@ -129,11 +132,13 @@
                                             </label>
                                             {{ form_label(form.CVV, 'CVV') }}
                                             {{ form_widget(form.CVV) }}
+                                            {{ form_errors(form.CVV) }}
                                         </div>
                                     </div>
 
 
                                 </div>
+                                <div class="g-recaptcha align-middle" data-sitekey="6Lc0qLQaAAAAANMXNlzKMHzwuXyWX2q9RZZYRN93"></div>
                                 <button class="subscribe btn btn-primary btn-block rounded-pill shadow-sm">{{ button_label|default('Save') }}</button>
                             </form>
                         </div>
