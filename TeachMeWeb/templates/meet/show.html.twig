@@ -1,0 +1,60 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block title %}Meet{% endblock %}
+
+{% block body %}
+    <h1>Meet</h1>
+
+<main class='main-content bgc-grey-100'>
+    <div id='mainContent'>
+        <div class="container-fluid">
+            <h4 class="c-grey-900 mT-10 mB-30">Meeting Management</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="bgc-white bd bdrs-3 p-20 mB-20">
+                        <h4 class="c-grey-900 mB-20">Current Meetings</h4>
+                        <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <tbody>
+            <tr>
+                <th>Meet Id</th>
+                <td>{{ meet.meetId }}</td>
+            </tr>
+            <tr>
+                <th>Meet Link</th>
+                <td>{{ meet.meetLink }}</td>
+            </tr>
+            <tr>
+                <th>MeetDate</th>
+                <td>{{ meet.meetDate ? meet.meetDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>MeetPass</th>
+                <td>{{ meet.meetPass }}</td>
+            </tr>
+            <tr>
+                <th>MeetName</th>
+                <td>{{ meet.meetName }}</td>
+            </tr>
+            <tr>
+                <th>Participants</th>
+                <td>Tutor :{{ meet.tutorid }}
+                    <br>
+                    Student : {{ meet.studentid }}
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('meet_index') }}">back to list</a>
+
+    <a href="{{ path('meet_edit', {'meetId': meet.meetId}) }}">edit</a>
+
+    {{ include('meet/_delete_form.html.twig') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
