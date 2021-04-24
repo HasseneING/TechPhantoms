@@ -2,83 +2,91 @@
 
 namespace App\Entity;
 
+use App\Repository\MeetRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Meet
- *
- * @ORM\Table(name="meet", indexes={@ORM\Index(name="FK_6117D13B6C755", columns={"teacherID"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass=MeetRepository::class)
  */
 class Meet
 {
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Column(name="meet_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    private $meetId;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="meet_link", type="string", length=250, nullable=false)
+     * @Assert\NotBlank(message="Meet link is required")
+     * @ORM\Column(name="meet_link", type="string", length=250, nullable=true)
      */
     private $meetLink;
 
     /**
-     * @var \DateTime
-     *
+     * @var \DateTime|null
+     * @Assert\NotBlank(message="Meet date is required")
      * @ORM\Column(name="meet_date", type="datetime", nullable=true)
      */
-    private $meetDate ;
+    private $meetDate;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="meet_pass", type="string", length=255, nullable=false)
+     * @Assert\NotBlank(message="Meet password is required")
+     * @ORM\Column(name="meet_pass", type="string", length=255, nullable=true)
      */
     private $meetPass;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="meet_name", type="string", length=255, nullable=false)
+     * @Assert\NotBlank(message="Meet name is required")
+     * @ORM\Column(name="meet_name", type="string", length=255, nullable=true)
      */
     private $meetName;
 
     /**
-     * @var \Teacher
-     *
-     * @ORM\ManyToOne(targetEntity="Teacher")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="teacherID", referencedColumnName="teacher_id")
+     * @Assert\NotBlank(message=" Please select a Tutor")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Tutor", inversedBy="meets")
+     * @ORM\JoinColumn(nullable=true)
      * })
      */
-    private $teacherid;
+    private $tutorid;
+
+    /**
+     * @Assert\NotBlank(message=" Please select a Teacher")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Student", inversedBy="meets")
+     * @ORM\JoinColumn(nullable=true)
+     *
+     */
+    private $studentid;
+
+
 
     /**
      * @return int
      */
-    public function getId(): int
+    public function getMeetId(): ?int
     {
-        return $this->id;
+        return $this->meetId;
     }
 
     /**
-     * @param int $id
+     * @param int $meetId
      */
-    public function setId(int $id): void
+    public function setMeetId(int $meetId): self
     {
-        $this->id = $id;
+        $this->meetId = $meetId;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getMeetLink(): string
+    public function getMeetLink(): ?string
     {
         return $this->meetLink;
     }
@@ -86,31 +94,33 @@ class Meet
     /**
      * @param string $meetLink
      */
-    public function setMeetLink(string $meetLink): void
+    public function setMeetLink(string $meetLink): self
     {
         $this->meetLink = $meetLink;
+        return $this;
     }
 
     /**
-     * @return \DateTime
+     * @return \DateTime|null
      */
-    public function getMeetDate()
+    public function getMeetDate(): ?\DateTime
     {
         return $this->meetDate;
     }
 
     /**
-     * @param \DateTime $meetDate
+     * @param \DateTime|null $meetDate
      */
-    public function setMeetDate($meetDate): void
+    public function setMeetDate(?\DateTime $meetDate): self
     {
         $this->meetDate = $meetDate;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getMeetPass(): string
+    public function getMeetPass(): ?string
     {
         return $this->meetPass;
     }
@@ -118,15 +128,16 @@ class Meet
     /**
      * @param string $meetPass
      */
-    public function setMeetPass(string $meetPass): void
+    public function setMeetPass(string $meetPass): self
     {
         $this->meetPass = $meetPass;
+        return $this;
     }
 
     /**
      * @return string
      */
-    public function getMeetName(): string
+    public function getMeetName(): ?string
     {
         return $this->meetName;
     }
@@ -134,26 +145,32 @@ class Meet
     /**
      * @param string $meetName
      */
-    public function setMeetName(string $meetName): void
+    public function setMeetName(string $meetName): self
     {
         $this->meetName = $meetName;
+        return $this;
     }
 
-    /**
-     * @return \Teacher
-     */
-    public function getTeacherid(): \Teacher
+    public function getTutorid(): ?Tutor
     {
-        return $this->teacherid;
+        return $this->tutorid;
     }
 
-    /**
-     * @param \Teacher $teacherid
-     */
-    public function setTeacherid(\Teacher $teacherid): void
+    public function setTutorid(?Tutor $tutorid): self
     {
-        $this->teacherid = $teacherid;
+        $this->tutorid = $tutorid;
+        return $this;
     }
 
+    public function getStudentid(): ?Student
+    {
+        return $this->studentid;
+    }
 
+    public function setStudentid(?Student $studentid): self
+    {
+        $this->studentid = $studentid;
+        return $this;
+    }
 }
+
