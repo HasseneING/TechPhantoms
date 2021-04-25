@@ -37,6 +37,30 @@ class Card
      */
     private $Email;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\CardScheme(
+     *     schemes={"VISA"},
+     *     message="Your credit card number is invalid."
+     * )
+     */
+    private $cardNumber;
+
+    /**
+     * @ORM\Column(type="string", length=2)
+     */
+    private $MM;
+
+    /**
+     * @ORM\Column(type="string", length=2)
+     */
+    private $YY;
+
+    /**
+     * @ORM\Column(type="string", length=3)
+     */
+    private $CVV;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +98,54 @@ class Card
     public function setEmail(string $Email): self
     {
         $this->Email = $Email;
+
+        return $this;
+    }
+
+    public function getCardNumber(): ?string
+    {
+        return $this->cardNumber;
+    }
+
+    public function setCardNumber(string $cardNumber): self
+    {
+        $this->cardNumber = $cardNumber;
+
+        return $this;
+    }
+
+    public function getMM(): ?string
+    {
+        return $this->MM;
+    }
+
+    public function setMM(string $MM): self
+    {
+        $this->MM = $MM;
+
+        return $this;
+    }
+
+    public function getYY(): ?string
+    {
+        return $this->YY;
+    }
+
+    public function setYY(string $YY): self
+    {
+        $this->YY = $YY;
+
+        return $this;
+    }
+
+    public function getCVV(): ?string
+    {
+        return $this->CVV;
+    }
+
+    public function setCVV(string $CVV): self
+    {
+        $this->CVV = $CVV;
 
         return $this;
     }

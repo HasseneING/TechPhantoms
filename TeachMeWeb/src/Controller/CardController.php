@@ -6,6 +6,7 @@ use App\Entity\Card;
 use App\Form\CardType;
 use App\Repository\CardRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -26,9 +27,40 @@ class CardController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="card_new", methods={"GET","POST"})
+     * @Route("/search", name="search")
      */
-    public function new(Request $request): Response
+    public function search(Request $request)
+    {
+
+        $r = $this->getDoctrine()->getRepository(Card::class);
+        $filtre = $request->get("searchaj");
+
+        $donnes = $r->getdonn($filtre);
+
+
+        if ($request->get('ajax')) {
+            return new JsonResponse([
+                'content' => $this->renderView('card/content.html.twig', [
+                    'cards' => $donnes,
+                ])]);
+        }
+        else
+        {
+            return new JsonResponse([
+                'content' => $this->renderView('card/content.html.twig', [
+                    'cards' => $donnes,
+                ])]);
+        }
+
+
+    }
+
+
+        /**
+         * @Route("/new", name="card_new", methods={"GET","POST"})
+         */
+        public
+        function new(Request $request): Response
     {
         $card = new Card();
         $form = $this->createForm(CardType::class, $card);
@@ -83,7 +115,7 @@ class CardController extends AbstractController
      */
     public function delete(Request $request, Card $card): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$card->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $card->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($card);
             $entityManager->flush();

@@ -15,6 +15,10 @@ class CardType extends AbstractType
             ->add('firstName')
             ->add('lastName')
             ->add('Email')
+            ->add('cardNumber')
+            ->add('MM')
+            ->add('YY')
+            ->add('CVV')
         ;
     }
 

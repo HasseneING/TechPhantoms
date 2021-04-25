@@ -1,0 +1,26 @@
+{%  extends "admin/index.html.twig" %}
+
+{% block title %}NewsletterSubs{% endblock %}
+
+{% block body %}
+    <h1>NewsletterSubs</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ newsletter_sub.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ newsletter_sub.Email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('newsletter_subs_index') }}">back to list</a>
+
+    <a href="{{ path('newsletter_subs_edit', {'id': newsletter_sub.id}) }}">edit</a>
+
+    {{ include('newsletter_subs/_delete_form.html.twig') }}
+{% endblock %}

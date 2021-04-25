@@ -1,0 +1,21 @@
+
+{% for card in cards %}
+    <tr>
+        <td>{{ card.id }}</td>
+        <td>{{ card.firstName }}</td>
+        <td>{{ card.lastName }}</td>
+        <td>{{ card.Email }}</td>
+        <td>{{ card.cardNumber|price }}</td>
+        <td>{{ card.MM }}</td>
+        <td>{{ card.YY }}</td>
+        <td>{{ card.CVV }}</td>
+        <td>
+            <a href="{{ path('card_show', {'id': card.id}) }}" class="btn btn-primary">show</a>
+            <a href="{{ path('card_edit', {'id': card.id}) }}" class="btn btn-primary">edit</a>
+        </td>
+    </tr>
+{% else %}
+    <tr>
+        <td colspan="5">no records found</td>
+    </tr>
+{% endfor %}

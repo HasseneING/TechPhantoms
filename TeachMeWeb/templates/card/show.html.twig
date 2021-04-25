@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{%  extends "admin/index.html.twig" %}
 
 {% block title %}Card{% endblock %}
 {% block hero %} <br>{% endblock %}
@@ -22,6 +22,22 @@
             <tr>
                 <th>Email</th>
                 <td>{{ card.Email }}</td>
+            </tr>
+            <tr>
+                <th>Card Number</th>
+                <td>{{ card.cardNumber }}</td>
+            </tr>
+            <tr>
+                <th>Card MM</th>
+                <td>{{ card.MM }}</td>
+            </tr>
+            <tr>
+                <th>Card YY</th>
+                <td>{{ card.YY }}</td>
+            </tr>
+            <tr>
+                <th>Card CVV</th>
+                <td>{{ card.CVV }}</td>
             </tr>
         </tbody>
     </table>
