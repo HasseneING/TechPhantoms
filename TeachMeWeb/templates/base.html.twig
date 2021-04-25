@@ -1,14 +1,20 @@
+
 <!DOCTYPE html>
 <html>
+
+{% block head %}
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+        <!-- make sure that jquery is included --!>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 
@@ -64,12 +70,16 @@
             {#{{ encore_entry_script_tags('app') }}#}
 
         {% endblock %}
+
     </head>
+
+    {% endblock %}
 
 
 
 
     <body>
+
     <!-- ======= Header ======= -->
 
     <div class="container d-flex align-items-center">
@@ -78,7 +88,7 @@
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-        <nav id="navbar" class="navbar order-last order-lg-0">
+        <nav id="navbar"   class="navbar order-last order-lg-0">
             <ul>
                 <li><a class="active" href="{{asset('index')}}">Home</a></li>
                 <li><a href="{{asset('about.html')}}">About</a></li>
@@ -115,9 +125,6 @@
     <!-- End Header -->
 
     {% block body %}
-
-
-
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex justify-content-center align-items-center">
         <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
@@ -128,7 +135,7 @@
     </section><!-- End Hero -->
 
     <main id="main">
-
+        {% block tre %} {% endblock  %}
         <!-- ======= About Section ======= -->
         <section id="about" class="about">
             <div class="container" data-aos="fade-up">
@@ -484,8 +491,9 @@
             </div>
         </section><!-- End Trainers Section -->
 
-    </main><!-- End #main -->
 
+    </main><!-- End #main -->
+    {% endblock %}
     <!-- ======= Footer ======= -->
     <footer id="footer">
 
