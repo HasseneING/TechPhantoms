@@ -138,14 +138,26 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="sidebar-link" href="{{ path('admin_default', {'pageName': 'compose'})}}">
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" href="javascript:void(0);">
                 <span class="icon-holder">
-                  <i class="c-blue-500 ti-share"></i>
+                  <i class="c-orange-500 ti-layout-list-thumb"></i>
                 </span>
                         <span class="title">Compose</span>
+                        <span class="arrow">
+                  <i class="ti-angle-right"></i>
+                </span>
                     </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="sidebar-link" href="{{ path('newsletter_subs_index')}}">Newsletter</a>
+                        </li>
+                        <li>
+                            <a class="sidebar-link" href="{{ path('admin_default', {'pageName': 'datatable'})}}">Email Template</a>
+                        </li>
+                    </ul>
                 </li>
+
                 <li class="nav-item">
                     <a class="sidebar-link" href="{{ path('admin_default', {'pageName': 'calendar'})}}">
                 <span class="icon-holder">
@@ -179,11 +191,11 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="sidebar-link" href="ui">
+                    <a class="sidebar-link" href="{{ path('card_index')}}">
                 <span class="icon-holder">
                     <i class="c-pink-500 ti-palette"></i>
                   </span>
-                        <span class="title">UI Elements</span>
+                        <span class="title">Customers </span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
