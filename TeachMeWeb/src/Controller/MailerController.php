@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\NewsletterSubs;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -27,6 +28,12 @@ class MailerController extends AbstractController
      */
     public function sendEmail(MailerInterface $mailer): Response
     {
+
+        $repository = $this->getDoctrine()->getRepository(NewsletterSubs::class);
+        $addrs=$repository->findAll();
+
+
+
         $email = (new TemplatedEmail())
             ->from('teachme242@gmail.com')
             ->to('hamedhassenekun@gmail.com')
