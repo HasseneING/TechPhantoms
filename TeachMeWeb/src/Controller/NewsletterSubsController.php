@@ -33,14 +33,16 @@ class NewsletterSubsController extends AbstractController
         $newsletterSub = new NewsletterSubs();
         $form = $this->createForm(NewsletterSubsType::class, $newsletterSub);
         $form->handleRequest($request);
+        $done=false;
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($newsletterSub);
             $entityManager->flush();
-
-            return $this->redirectToRoute('index');
+            $done=true;
         }
+
 
         return $this->render('base.html.twig', [
             'newsletter_sub' => $newsletterSub,

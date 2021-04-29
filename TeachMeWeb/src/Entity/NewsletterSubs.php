@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Repository\NewsletterSubsRepository;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass=NewsletterSubsRepository::class)
  */
@@ -19,6 +19,8 @@ class NewsletterSubs
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Email should not be blank")
+     * @Assert\Email(message = "The email '{{ value }}' is not a valid email.")
      */
     private $Email;
 

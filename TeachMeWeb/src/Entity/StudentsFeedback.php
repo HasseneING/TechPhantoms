@@ -70,7 +70,7 @@ class StudentsFeedback
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="Date", type="date", options={"default"="current_timestamp()"})
+     * @ORM\Column(name="Date", type="date")
      *
      */
 

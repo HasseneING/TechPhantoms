@@ -18,6 +18,7 @@ class NewsletterSubsRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, NewsletterSubs::class);
     }
+    
 
     // /**
     //  * @return NewsletterSubs[] Returns an array of NewsletterSubs objects
