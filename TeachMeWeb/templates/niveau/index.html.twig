@@ -1,0 +1,97 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block title %}Niveau index{% endblock %}
+
+{% block body %}
+    <h1>Niveau index</h1>
+    <a class="btn btn-primary" href="{{ path('sortbytitleasc')}}">Sort</a>
+
+    <table class="table" id="tableac">
+        <input type="text" id="search" class="form-control" placeholder='Search'>
+        <thead>
+            <tr>
+                <th>IdN</th>
+                <th>NomNiv</th>
+                <th>IdTeacher</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for niveau in niveaux %}
+            <tr>
+                <td>{{ niveau.idN }}</td>
+                <td>{{ niveau.nomNiv }}</td>
+                <td>{{ niveau.idTeacher }}</td>
+                <td>
+                    <a href="{{ path('niveau_show', {'idN': niveau.idN}) }}">show</a>
+                    <a href="{{ path('niveau_edit', {'idN': niveau.idN}) }}">edit</a>
+                </td>
+            </tr>
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
+"></script>
+            <script>
+                $(document).ready(function(){
+                    $('#search').keyup(function(){
+                        search_table($(this).val());
+                    });
+                    function search_table(value){
+                        $('#tableac tbody tr').each(function(){
+                            var found = 'false';
+                            $(this).each(function(){
+                                if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                                {
+                                    found = 'true';
+                                }
+                            });
+                            if(found === 'true')
+                            {
+                                $(this).show();
+
+                            }
+                            else
+                            {
+                                $(this).hide();
+
+                            }
+                        });
+                    }
+                });
+            </script><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+            <script>
+                $(document).ready(function(){
+                    $('#search').keyup(function(){
+                        search_table($(this).val());
+                    });
+                    function search_table(value){
+                        $('#tableac tbody tr').each(function(){
+                            var found = 'false';
+                            $(this).each(function(){
+                                if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
+                                {
+                                    found = 'true';
+                                }
+                            });
+                            if(found === 'true')
+                            {
+                                $(this).show();
+
+                            }
+                            else
+                            {
+                                $(this).hide();
+
+                            }
+                        });
+                    }
+                });
+            </script>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('niveau_new') }}">Create new</a>
+{% endblock %}

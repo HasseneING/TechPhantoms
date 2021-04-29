@@ -1,0 +1,69 @@
+{% block body %}
+
+    <div class="content">
+    <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-12">
+    <div class="card">
+    <div class="card-header card-header-primary">
+        <h1 align="center" style="color:blue;">matieres</h1>
+        <h2  align="center"style="color:orange;" > List of matieres </h2>
+    </div>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+            #customers {
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+            #customers tr:hover {background-color: #ddd;}
+
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: royalblue;
+                color: white;
+            }
+        </style>
+    </head>
+<body>
+
+<table id="customers">
+
+    <tr>
+
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Type</th>
+        <th>Disponibility</th>
+        <th>IdTeacher</th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+
+            {% for matiere in matieres %}
+        <tr>
+            <td>{{ matiere.id }}</td>
+            <td>{{ matiere.nom }}</td>
+            <td>{{ matiere.type }}</td>
+            <td>{{ matiere.disponibility }}</td>
+            <td>{{ matiere.idTeacher }}</td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
