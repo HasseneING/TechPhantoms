@@ -6,7 +6,7 @@
     <h1>Niveau index</h1>
 
     <table class="table" id="tableac">
-        <input type="text" id="search" class="form-control" placeholder='Search'>
+
         <thead>
         <tr>
             <th>IdN</th>
@@ -22,64 +22,7 @@
                 <td>{{ niveau.idTeacher }}</td>
 
             </tr>
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
-"></script>
-            <script>
-                $(document).ready(function(){
-                    $('#search').keyup(function(){
-                        search_table($(this).val());
-                    });
-                    function search_table(value){
-                        $('#tableac tbody tr').each(function(){
-                            var found = 'false';
-                            $(this).each(function(){
-                                if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
-                                {
-                                    found = 'true';
-                                }
-                            });
-                            if(found === 'true')
-                            {
-                                $(this).show();
 
-                            }
-                            else
-                            {
-                                $(this).hide();
-
-                            }
-                        });
-                    }
-                });
-            </script><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-            <script>
-                $(document).ready(function(){
-                    $('#search').keyup(function(){
-                        search_table($(this).val());
-                    });
-                    function search_table(value){
-                        $('#tableac tbody tr').each(function(){
-                            var found = 'false';
-                            $(this).each(function(){
-                                if($(this).text().toLowerCase().indexOf(value.toLowerCase()) >= 0)
-                                {
-                                    found = 'true';
-                                }
-                            });
-                            if(found === 'true')
-                            {
-                                $(this).show();
-
-                            }
-                            else
-                            {
-                                $(this).hide();
-
-                            }
-                        });
-                    }
-                });
-            </script>
             {% else %}
             <tr>
                 <td colspan="4">no records found</td>
