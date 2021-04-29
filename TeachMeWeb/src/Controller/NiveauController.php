@@ -102,7 +102,7 @@ class NiveauController extends AbstractController
         return $this->redirectToRoute('niveau_index');
     }
     /**
-     * @Route("/trie/nom", name="sortbytitleasc")
+     * @Route("/trie/nom", name="sort1bytitleasc")
      */
     public function sortByTitleASC(NiveauRepository $niveauRepository): Response
     {

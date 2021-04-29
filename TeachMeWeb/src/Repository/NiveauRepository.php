@@ -21,7 +21,7 @@ class NiveauRepository extends ServiceEntityRepository
     public function sortByTitleASC()
     {
         $niveau = $this->createQueryBuilder('n')
-            ->orderBy('n.nomNiv', 'DESC');
+            ->orderBy('n.nomNiv', 'ASC');
         $query = $niveau->getQuery();
         return $query->execute();
 
