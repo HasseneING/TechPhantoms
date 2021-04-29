@@ -44,10 +44,11 @@ class MailerController extends AbstractController
                 ->from('teachme242@gmail.com')
                 ->to($addr->getEmail())
                 ->cc('teachme242@example.com')
-                ->subject('Time for Symfony Mailer!')
+                ->subject('Hello! Check out our website!')
                 ->htmlTemplate('admin/welcomeletter.html.twig');
             $mailer->send($email);
         }
+//        $this->redirectToRoute('newsletter_subs_index');
 
         return $this->render('newsletter_subs/index.html.twig', [
             'controller_name' => 'MailerController',

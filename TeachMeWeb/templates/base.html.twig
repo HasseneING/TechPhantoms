@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -9,14 +8,16 @@
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
-        <link rel="stylesheet" href="{{asset('css/style.css')}}">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+              crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}"/>
         <!-- make sure that jquery is included --!>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+              rel="stylesheet">
 
 
         <link href="{{ asset('assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet">
@@ -30,32 +31,38 @@
         <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
         <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-         {% block stylesheets %}
+        {% block stylesheets %}
 
 
-         {% endblock %}
+        {% endblock %}
 
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://js.stripe.com/v3/"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"></script>
 
         <script src="https://use.fontawesome.com/3efeaf2454.js"></script>
 
         <!-- Template Main JS File -->
-        <script src="{{asset('assets/js/main.js')}}"></script>
-        <script src="{{asset('assets/js/alerts.js')}}"></script>
+        <script src="{{ asset('assets/js/main.js') }}"></script>
+        <script src="{{ asset('assets/js/alerts.js') }}"></script>
         <!-- Vendor JS Files -->
-        <script src="{{asset('assets/vendor/aos/aos.js')}}"></script>
-        <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-        <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
-        <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
-        <script src="{{asset('assets/vendor/purecounter/purecounter.js')}}"></script>
-        <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+        <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
+        <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+        <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+        <script src="{{ asset('assets/vendor/purecounter/purecounter.js') }}"></script>
+        <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
 
 
         <script src="{{ asset('assets/') }}vendor/aos/aos.js"></script>
@@ -66,65 +73,82 @@
 
         <!-- Template Main JS File -->
         <script src="{{ asset('assets/') }}js/main.js"></script>
+
+
+        <style type="text/css">
+            /* Always set the map height explicitly to define the size of the div
+             * element that contains the map. */
+            #map {
+                height: 100%;
+            }
+        </style>
+        <script>
+            let map;
+
+            function initMap() {
+                map = new google.maps.Map(document.getElementById("map"), {
+                    center: {lat: -34.397, lng: 150.644},
+                    zoom: 8,
+                });
+            }
+        </script>
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+            {# {{ encore_entry_script_tags('app') }} #}
 
         {% endblock %}
 
     </head>
 
-    {% endblock %}
+{% endblock %}
 
 
+<body>
 
+<!-- ======= Header ======= -->
 
-    <body>
+<div class="container d-flex align-items-center">
 
-    <!-- ======= Header ======= -->
+    <h1 class="logo me-auto"><a href="{{ asset('index') }}">Teach Me!</a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-    <div class="container d-flex align-items-center">
+    <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+            <li><a class="active" href="{{ asset('index') }}">Home</a></li>
+            <li><a href="{{ asset('about.html') }}">About</a></li>
+            <li><a href="{{ asset('courses.html') }}">Courses</a></li>
+            <li><a href="{{ asset('trainers.html') }}">Tutors</a></li>
+            <li><a href="{{ asset('events.html') }}">Events</a></li>
+            <li><a href="{{ asset('pricing.html') }}">Pricing</a></li>
 
-        <h1 class="logo me-auto"><a href="{{asset('index')}}">Teach Me!</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                    <li><a href="#">Drop Down 1</a></li>
+                    <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                        <ul>
+                            <li><a href="#">Deep Drop Down 1</a></li>
+                            <li><a href="#">Deep Drop Down 2</a></li>
+                            <li><a href="#">Deep Drop Down 3</a></li>
+                            <li><a href="#">Deep Drop Down 4</a></li>
+                            <li><a href="#">Deep Drop Down 5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Drop Down 2</a></li>
+                    <li><a href="#">Drop Down 3</a></li>
+                    <li><a href="#">Drop Down 4</a></li>
+                </ul>
+            </li>
+            <li><a href="footer">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
 
-        <nav id="navbar"   class="navbar order-last order-lg-0">
-            <ul>
-                <li><a class="active" href="{{asset('index')}}">Home</a></li>
-                <li><a href="{{asset('about.html')}}">About</a></li>
-                <li><a href="{{asset('courses.html')}}">Courses</a></li>
-                <li><a href="{{asset('trainers.html')}}">Tutors</a></li>
-                <li><a href="{{asset('events.html')}}">Events</a></li>
-                <li><a href="{{asset('pricing.html')}}">Pricing</a></li>
+    <a href="{{ asset('card') }}" class="get-started-btn">Login/signup</a>
 
-                <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="#">Drop Down 1</a></li>
-                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                            <ul>
-                                <li><a href="#">Deep Drop Down 1</a></li>
-                                <li><a href="#">Deep Drop Down 2</a></li>
-                                <li><a href="#">Deep Drop Down 3</a></li>
-                                <li><a href="#">Deep Drop Down 4</a></li>
-                                <li><a href="#">Deep Drop Down 5</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Drop Down 2</a></li>
-                        <li><a href="#">Drop Down 3</a></li>
-                        <li><a href="#">Drop Down 4</a></li>
-                    </ul>
-                </li>
-                <li><a href="footer">Contact</a></li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
+</div>
+<!-- End Header -->
 
-        <a href="{{ asset('card') }}" class="get-started-btn">Login/signup</a>
-
-    </div>
-    <!-- End Header -->
-
-    {% block body %}
+{% block body %}
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex justify-content-center align-items-center">
         <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
@@ -135,7 +159,7 @@
     </section><!-- End Hero -->
 
     <main id="main">
-        {% block tre %} {% endblock  %}
+        {% block tre %} {% endblock %}
         <!-- ======= About Section ======= -->
         <section id="about" class="about">
             <div class="container" data-aos="fade-up">
@@ -147,18 +171,21 @@
                     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
                         <h3>Teach me! The first website in Tunisia that helps you Teach or learn anything!</h3>
                         <p class="fst-italic">
-                            Our cherry picked Tutors will help you learn a skill, a language or even a subject from school! (in their own unique ways because we know how boring they can be, the subjects not the tutors, the tutors are pretty cool)
+                            Our cherry picked Tutors will help you learn a skill, a language or even a subject from
+                            school! (in their own unique ways because we know how boring they can be, the subjects not
+                            the tutors, the tutors are pretty cool)
                         </p>
                         <ul>
-                            <li><i class="bi bi-check-circle"></i> Make an account! </li>
-                            <li><i class="bi bi-check-circle"></i> Pick a tutor! </li>
+                            <li><i class="bi bi-check-circle"></i> Make an account!</li>
+                            <li><i class="bi bi-check-circle"></i> Pick a tutor!</li>
                             <li><i class="bi bi-check-circle"></i> and Learn my dude learn!</li>
                         </ul>
                         <p>
                             if you're too lazy click here to Signup with google ;)
                         </p>
                         <button type="button" class="btn btn-outline-danger">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-google" viewBox="0 0 16 16">
                                 <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"></path>
                             </svg>
                             Google
@@ -176,22 +203,26 @@
                 <div class="row counters">
 
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1"
+                              class="purecounter"></span>
                         <p>Students</p>
                     </div>
 
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1"
+                              class="purecounter"></span>
                         <p>Courses</p>
                     </div>
 
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1"
+                              class="purecounter"></span>
                         <p>Events</p>
                     </div>
 
                     <div class="col-lg-3 col-6 text-center">
-                        <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+                        <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                              class="purecounter"></span>
                         <p>Trainers</p>
                     </div>
 
@@ -223,21 +254,24 @@
                                     <div class="icon-box mt-4 mt-xl-0">
                                         <i class="bx bx-receipt"></i>
                                         <h4>Corporis voluptates sit</h4>
-                                        <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                                        <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
+                                            aliquip</p>
                                     </div>
                                 </div>
                                 <div class="col-xl-4 d-flex align-items-stretch">
                                     <div class="icon-box mt-4 mt-xl-0">
                                         <i class="bx bx-cube-alt"></i>
                                         <h4>Ullamco laboris ladore pan</h4>
-                                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                            deserunt</p>
                                     </div>
                                 </div>
                                 <div class="col-xl-4 d-flex align-items-stretch">
                                     <div class="icon-box mt-4 mt-xl-0">
                                         <i class="bx bx-images"></i>
                                         <h4>Labore consequatur</h4>
-                                        <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                                        <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis
+                                            facere</p>
                                     </div>
                                 </div>
                             </div>
@@ -351,10 +385,12 @@
                                 </div>
 
                                 <h3><a href="course-details.html">Website Design</a></h3>
-                                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae
+                                    dolores dolorem tempore.</p>
                                 <div class="trainer d-flex justify-content-between align-items-center">
                                     <div class="trainer-profile d-flex align-items-center">
-                                        <img src="{{ asset('assets/') }}img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                                        <img src="{{ asset('assets/') }}img/trainers/trainer-1.jpg" class="img-fluid"
+                                             alt="">
                                         <span>Antonio</span>
                                     </div>
                                     <div class="trainer-rank d-flex align-items-center">
@@ -377,10 +413,12 @@
                                 </div>
 
                                 <h3><a href="course-details.html">Search Engine Optimization</a></h3>
-                                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae
+                                    dolores dolorem tempore.</p>
                                 <div class="trainer d-flex justify-content-between align-items-center">
                                     <div class="trainer-profile d-flex align-items-center">
-                                        <img src="{{ asset('assets/') }}img/trainers/trainer-2.jpg" class="img-fluid" alt="">
+                                        <img src="{{ asset('assets/') }}img/trainers/trainer-2.jpg" class="img-fluid"
+                                             alt="">
                                         <span>Lana</span>
                                     </div>
                                     <div class="trainer-rank d-flex align-items-center">
@@ -403,10 +441,12 @@
                                 </div>
 
                                 <h3><a href="course-details.html">Copywriting</a></h3>
-                                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae
+                                    dolores dolorem tempore.</p>
                                 <div class="trainer d-flex justify-content-between align-items-center">
                                     <div class="trainer-profile d-flex align-items-center">
-                                        <img src="{{ asset('assets/') }}img/trainers/trainer-3.jpg" class="img-fluid" alt="">
+                                        <img src="{{ asset('assets/') }}img/trainers/trainer-3.jpg" class="img-fluid"
+                                             alt="">
                                         <span>Brandon</span>
                                     </div>
                                     <div class="trainer-rank d-flex align-items-center">
@@ -436,7 +476,8 @@
                                 <h4>Walter White</h4>
                                 <span>Web Development</span>
                                 <p>
-                                    Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                                    Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis
+                                    quaerat qui aut aut aut
                                 </p>
                                 <div class="social">
                                     <a href=""><i class="bi bi-twitter"></i></a>
@@ -455,7 +496,8 @@
                                 <h4>Sarah Jhinson</h4>
                                 <span>Marketing</span>
                                 <p>
-                                    Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
+                                    Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto
+                                    rerum rerum temporibus
                                 </p>
                                 <div class="social">
                                     <a href=""><i class="bi bi-twitter"></i></a>
@@ -474,7 +516,8 @@
                                 <h4>William Anderson</h4>
                                 <span>Content</span>
                                 <p>
-                                    Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
+                                    Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et
+                                    laborum toro des clara
                                 </p>
                                 <div class="social">
                                     <a href=""><i class="bi bi-twitter"></i></a>
@@ -493,86 +536,114 @@
 
 
     </main><!-- End #main -->
-    {% endblock %}
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
+{% endblock %}
+<div class="mapouter">
+    <div class="gmap_canvas">
+        <iframe width="986" height="500" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=Esprit%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        <a href="https://putlocker-is.org"></a><br>
+        <style>.mapouter {
+                position: relative;
+                text-align: right;
+                height: 500px;
+                width: 986px;
+            }</style>
+        <a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+        <style>.gmap_canvas {
+                overflow: hidden;
+                background: none !important;
+                height: 500px;
+                width: 986px;
+            }</style>
+    </div>
+</div>
+</iframe>
+<div id="map"></div>
+<script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDM5Isj05gUdjRfj3VVpqM0Fde2U4KYE0&callback=initMap">
+</script>
 
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
+<!-- ======= Footer ======= -->
+<footer id="footer">
 
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Mentor</h3>
-                        <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
-                            United States <br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
-                        </p>
-                    </div>
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
 
-                    <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                        </ul>
-                    </div>
+                <div class="col-lg-3 col-md-6 footer-contact">
+                    <h3>Mentor</h3>
+                    <p>
+                        A108 Adam Street <br>
+                        New York, NY 535022<br>
+                        United States <br><br>
+                        <strong>Phone:</strong> +1 5589 55488 55<br>
+                        <strong>Email:</strong> info@example.com<br>
+                    </p>
+                </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                        </ul>
-                    </div>
+                <div class="col-lg-2 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                    </ul>
+                </div>
 
-                    <div class="col-lg-4 col-md-6 footer-newsletter" width="50px">
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                    </ul>
+                </div>
 
-                        <h4>Join Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                <div class="col-lg-4 col-md-6 footer-newsletter" width="50px">
 
-                            {% block formnewsletter %}
-                                {{ include('newsletter_subs/_form.html.twig') }}
-                            {% endblock %}
-                    </div>
+                    <h4>Join Our Newsletter</h4>
+                    <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+
+                    {% block formnewsletter %}
+                        {{ include('newsletter_subs/_form.html.twig') }}
+                    {% endblock %}
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="container d-md-flex py-4">
+    <div class="container d-md-flex py-4">
 
-            <div class="me-md-auto text-center text-md-start">
-                <div class="copyright">
-                    &copy; Copyright <strong><span>Mentor</span></strong>. All Rights Reserved
-                </div>
-                <div class="credits">
-                    <!-- All the links in the footer should remain intact. -->
-                    <!-- You can delete the links only if you purchased the pro version. -->
-                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ -->
-                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                </div>
+        <div class="me-md-auto text-center text-md-start">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Mentor</span></strong>. All Rights Reserved
             </div>
-            <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
             </div>
         </div>
-    </footer><!-- End Footer -->
+        <div class="social-links text-center text-md-right pt-3 pt-md-0">
+            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+    </div>
+</footer><!-- End Footer -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    <!-- Vendor JS Files -->
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+<!-- Vendor JS Files -->
 
-    </body>
+</body>
 </html>
