@@ -47,4 +47,105 @@ class MeetRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function getAllMeetsSortedByDescDate()
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->orderBy('m.meetDate', 'DESC');
+        return $qb->getQuery()->getResult();
+    }
+
+    public function getAllMeetsSortedByAscDate()
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->orderBy('m.meetDate', 'ASC');
+        return $qb->getQuery()->getResult();
+    }
+
+    public function getAllMeetsSortedByDescName()
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->orderBy('m.meetName', 'DESC');
+        return $qb->getQuery()->getResult();
+    }
+
+    public function getAllMeetsSortedByAscName()
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->orderBy('m.meetName', 'ASC');
+        return $qb->getQuery()->getResult();
+    }
+
+    public function getAllMeetsSortedByAscPass()
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->orderBy('m.meetPass', 'ASC');
+        return $qb->getQuery()->getResult();
+    }
+
+    public function getAllMeetsSortedByDESCPass()
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->orderBy('m.meetPass', 'DESC');
+        return $qb->getQuery()->getResult();
+    }
+
+    public function getAllMeetsPreviousMeetings()
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->setParameter('now', new \DateTime('now'))
+            ->where('m.meetDate < :now');
+        return $qb->getQuery()->getResult();
+    }
+
+    public function getAllMeetsUpcomingMeetings()
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->setParameter('now', new \DateTime('now'))
+            ->where('m.meetDate > :now');
+        return $qb->getQuery()->getResult();
+    }
+
+    public function searchUpcomingMeetings(string $name)
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->setParameter('name', "%$name%")
+            ->setParameter('now', new \DateTime('now'))
+            ->where('m.meetDate > :now')
+        ->andWhere('m.meetName LIKE :name');
+
+        return $qb->getQuery()->getResult();
+    }
+
+    public function searchPreviousMeetings(string $name)
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->setParameter('name', "%$name%")
+            ->setParameter('now', new \DateTime('now'))
+            ->where('m.meetDate < :now')
+            ->andWhere('m.meetName LIKE :name');
+
+        return $qb->getQuery()->getResult();
+    }
+
+    public function findByNameAutocomplete(string $name): array
+    {
+        $queryBuilder = $this->createQueryBuilder('m')
+            ->where("m. LIKE :meetName")
+            ->setParameter('name', "%$name%")
+            ->orderBy('c.name', 'ASC')
+            ->setMaxResults(10);
+        return $queryBuilder->getQuery()
+            ->getResult();
+    }
+
+    public function countUpcomingMeeting()
+    {
+        $qb = $this->createQueryBuilder('m')
+            ->setParameter('now', new \DateTime('now'))
+            ->select('count(m.meetDate)')
+            ->where('m.meetDate < :now');
+        return $qb->getQuery()->getResult();
+    }
+
 }

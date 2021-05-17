@@ -12,8 +12,17 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="bgc-white bd bdrs-3 p-20 mB-20">
-                        <h4 class="c-grey-900 mB-20">Current Meetings</h4>
-                        <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <h4 class="c-grey-900 mB-20">Upcoming Meetings</h4>
+
+                        <form class="example-wrapper" role="search" method="post" {{ path('meet_index') }}>
+                            <div>
+                                <input type="text" class="form-control" name="search" id="search">
+                                <br>
+                                <br>
+                                <button type="submit" class="btn btn-success" name="sub">search</button>
+                            </div>
+                        </form>
+                        <table class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Meet Id</th>
@@ -26,7 +35,7 @@
             </tr>
         </thead>
         <tbody>
-        {% for meet in meets %}
+        {% for meet in upmeets %}
             <tr>
                 <td>{{ meet.meetId }}</td>
                 <td>{{ meet.meetLink }}</td>
@@ -49,11 +58,67 @@
         {% endfor %}
         </tbody>
                         </table>
-                        <a href="{{ path('meet_new') }}">Create new</a>
                     </div>
                 </div>
             </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="bgc-white bd bdrs-3 p-20 mB-20">
+                            <h4 class="c-grey-900 mB-20">Previous Meetings</h4>
+                                    <form class="example-wrapper" role="search" method="post" {{ path('meet_index') }}>
+                                        <div>
+                                            <input type="text" class="form-control" name="search" id="searchprev">
+                                            <br>
+                                            <br>
+                                            <button type="submit" class="btn btn-success" name="sub">search</button>
+                                        </div>
+                                    </form>
+                            <table class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                <tr>
+                                    <th>Meet Id</th>
+                                    <th>Meet Link</th>
+                                    <th>Meet Date</th>
+                                    <th>Meet Password</th>
+                                    <th>Meet Name</th>
+                                    <th>Particitpants</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for meet in prevmeets %}
+                                    <tr>
+                                        <td>{{ meet.meetId }}</td>
+                                        <td>{{ meet.meetLink }}</td>
+                                        <td>{{ meet.meetDate ? meet.meetDate|date('Y-m-d H:i:s') : '' }}</td>
+                                        <td>{{ meet.meetPass }}</td>
+                                        <td>{{ meet.meetName }}</td>
+                                        <td>Tutor :{{ meet.tutorid }}
+                                            <br>
+                                            Student : {{ meet.studentid }}
+                                        </td>
+                                        <td>
+                                            <a href="{{ path('meet_show', {'meetId': meet.meetId}) }}">show</a>
+                                            <a href="{{ path('meet_edit', {'meetId': meet.meetId}) }}">edit</a>
+                                        </td>
+                                    </tr>
+                                {% else %}
+                                    <tr>
+                                        <td colspan="6">no records found</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                                </div>
+            </div>
+        </div>
+            <center>
+                <a href="{{ path('meet_new') }}">Create a new meeting</a><br>
+                <a href="{{ path('pdfindex' )}}">Export to pdf</a><br>
+                <a href="{{ path('defaus') }}">Statistics</a><br>
+                <a href="http://127.0.0.1:9999/index.html">Join Meet</a><br>
+            </center>
         </div>
     </div>
-</main>
+    </main>
 {% endblock %}

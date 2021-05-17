@@ -11,6 +11,7 @@ repositories {
     flatDir {
         dirs 'libs'
     }
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
@@ -22,6 +23,7 @@ dependencies {
     compile 'com.jfoenix:jfoenix:8.0.10'
     compile 'org.json:json:20160810'
     implementation "com.stripe:stripe-java:20.43.0"
+    implementation 'com.github.itext:itext7:7.2.0'
 
 }
 

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="698.0" styleClass="btn" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Admin.AddMeetController">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="93.0" prefWidth="434.0">
+         <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Meeting Details" wrappingWidth="206.03436279296875">
+                    <font>
+                        <Font name="Calibri" size="32.0" />
+                    </font>
+                </Text>
+         </children>
+        </HBox>
+        <HBox alignment="CENTER">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Meet Name" wrappingWidth="173.33671617507935">
+                    <font>
+                        <Font name="Century Gothic" size="21.0" />
+                    </font>
+                </Text>
+                <JFXTextField fx:id="meetName" prefHeight="39.0" prefWidth="286.0">
+                    <font>
+                        <Font name="Century Gothic" size="20.0" />
+                    </font>
+                </JFXTextField>
+            </children>
+            <VBox.margin>
+                <Insets top="30.0" />
+            </VBox.margin>
+        </HBox>
+        <HBox alignment="CENTER" layoutX="10.0" layoutY="64.0" prefHeight="40.0" prefWidth="463.0">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Meet Date" wrappingWidth="182.13674998283386">
+                    <font>
+                        <Font name="Century Gothic" size="21.0" />
+                    </font>
+                </Text>
+                <JFXDatePicker fx:id="meetDate" prefHeight="28.0" prefWidth="598.0" />
+            </children>
+            <VBox.margin>
+                <Insets top="17.0" />
+            </VBox.margin>
+        </HBox>
+        <HBox alignment="CENTER" layoutX="10.0" layoutY="89.0" prefHeight="39.0" prefWidth="482.0">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Meet PassCode" wrappingWidth="187.73655557632446">
+                    <font>
+                        <Font name="Century Gothic" size="21.0" />
+                    </font>
+                </Text>
+                <JFXTextField fx:id="MeetPass" prefHeight="39.0" prefWidth="284.0">
+                    <font>
+                        <Font name="Century Gothic" size="20.0" />
+                    </font>
+                </JFXTextField>
+            </children>
+            <VBox.margin>
+                <Insets top="17.0" />
+            </VBox.margin>
+        </HBox>
+        <HBox alignment="CENTER" layoutX="10.0" layoutY="114.0">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Student" wrappingWidth="244.5367202758789">
+                    <font>
+                        <Font name="Century Gothic" size="21.0" />
+                    </font>
+                </Text>
+            <JFXComboBox fx:id="studentid" prefHeight="41.0" prefWidth="219.0" />
+            </children>
+            <VBox.margin>
+                <Insets top="17.0" />
+            </VBox.margin>
+        </HBox>
+      <HBox alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Teacher" wrappingWidth="244.5367202758789">
+               <font>
+                  <Font name="Century Gothic" size="21.0" />
+               </font>
+            </Text>
+            <JFXComboBox fx:id="teacherid" prefHeight="44.0" prefWidth="219.0" />
+         </children>
+      </HBox>
+        <HBox alignment="CENTER" prefHeight="62.0" prefWidth="384.0">
+            <VBox.margin>
+                <Insets top="25.0" />
+            </VBox.margin>
+            <children>
+                <JFXButton onMouseClicked="#save" prefHeight="45.0" prefWidth="160.0" style="-fx-background-color: #00E676;" styleClass="btn" text="Save">
+                    <HBox.margin>
+                        <Insets right="8.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font name="Century Gothic" size="24.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton layoutX="132.0" layoutY="19.0" onMouseClicked="#clean" prefHeight="45.0" prefWidth="160.0" style="-fx-background-color: #FFFF00;" styleClass="btn" text="Clean">
+                    <HBox.margin>
+                        <Insets left="8.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font name="Century Gothic" size="24.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </HBox>
+      <HBox alignment="CENTER" />
+    </children>
+    <padding>
+        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+    </padding>
+</VBox>

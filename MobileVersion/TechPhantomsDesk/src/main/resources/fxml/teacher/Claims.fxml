@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane fx:id="ap" prefHeight="711.0" prefWidth="839.0" styleClass="contentArea" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.teacher.AddMeetController">
+    <children>
+        <Pane prefHeight="139.0" prefWidth="1102.0" style="-fx-background-color: #2D75E8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="73.0" layoutY="30.0" text="Create Meeting" textFill="WHITE">
+                    <font>
+                        <Font size="48.0" />
+                    </font>
+                </Label>
+                <Label layoutX="79.0" layoutY="91.0" textFill="WHITE">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <JFXTextField fx:id="meet_name" layoutX="388.0" layoutY="196.0" prefHeight="27.0" prefWidth="222.0" />
+        <JFXTextField fx:id="meet_pass" layoutX="386.0" layoutY="250.0" prefHeight="27.0" prefWidth="221.0" />
+        <JFXComboBox fx:id="student" layoutX="380.0" layoutY="456.0" prefHeight="26.0" prefWidth="228.0" promptText="Select a student" />
+        <JFXButton layoutX="355.0" layoutY="606.0" mnemonicParsing="false" onAction="#btnSubmit" prefHeight="46.0" prefWidth="129.0" style="-fx-background-color: #1B6CD7; -fx-background-radius: 5em;" text="Send" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </JFXButton>
+        <Label layoutX="250.0" layoutY="205.0" text="Meet Name">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="253.0" layoutY="250.0" text="Meet Pass">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="252.0" layoutY="304.0" text="Meet Date">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="256.0" layoutY="408.0" prefHeight="17.0" prefWidth="54.0" text="Tutor ">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="255.0" layoutY="455.0" prefHeight="27.0" prefWidth="81.0" text="Student">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <JFXComboBox fx:id="tutor" layoutX="380.0" layoutY="408.0" prefHeight="27.0" prefWidth="228.0" promptText="Select a tutor" />
+        <JFXDatePicker fx:id="start_date" layoutX="380.0" layoutY="304.0" prefHeight="28.0" prefWidth="238.0" />
+        <Label layoutX="254.0" layoutY="356.0" text="Meet Time">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <JFXTimePicker fx:id="start_time" layoutX="380.0" layoutY="356.0" prefHeight="28.0" prefWidth="238.0" />
+    </children>
+</AnchorPane>

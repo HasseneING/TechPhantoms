@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- doccure/doctor-dashboard.html  30 Nov 2019 04:12:03 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>Doccure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/tutorfront/bootstrap.min.css') }}">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/tutorfront/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/tutorfront/all.min.css') }}">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/tutorfront/style.css') }}">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="{{ asset('assets/tutorfront/html5shiv.min.js') }}"></script>
+    <script src="{{ asset('assets/tutorfront/respond.min.js') }}"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+
+
+<!-- Page Content -->
+<div class="content">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar">
+
+                <!-- Profile Sidebar -->
+                <div class="profile-sidebar">
+                    <div class="widget-profile pro-widget-content">
+                        <div class="profile-info-widget">
+                            <a href="#" class="booking-doc-img">
+                                <img src="" alt="Teacher Image">
+                            </a>
+                            <div class="profile-det-info">
+                                <h3>Teacher Profile</h3>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-widget">
+                        <nav class="dashboard-menu">
+                            <ul>
+                                <li class="active">
+                                    <a href="{{ path('tutorfront_default', {'pageName': 'dashboard'})}}">
+                                        <i class="fas fa-columns"></i>
+                                        <span>Dashboard</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('meet_index')}}">
+                                        <i class="fas fa-calendar-check"></i>
+                                        <span>Appointments</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="my-students.html">
+                                        <i class="fas fa-user-injured"></i>
+                                        <span>My Patients</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="schedule-timings.html">
+                                        <i class="fas fa-hourglass-start"></i>
+                                        <span>Schedule Timings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="invoices.html">
+                                        <i class="fas fa-file-invoice"></i>
+                                        <span>Invoices</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="reviews.html">
+                                        <i class="fas fa-star"></i>
+                                        <span>Reviews</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="chat-doctor.html">
+                                        <i class="fas fa-comments"></i>
+                                        <span>Message</span>
+                                        <small class="unread-msg">23</small>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="teacher-profile-settings.html">
+                                        <i class="fas fa-user-cog"></i>
+                                        <span>Profile Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="social-media.html">
+                                        <i class="fas fa-share-alt"></i>
+                                        <span>Social Media</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="teacher-change-password.html">
+                                        <i class="fas fa-lock"></i>
+                                        <span>Change Password</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index-2.html">
+                                        <i class="fas fa-sign-out-alt"></i>
+                                        <span>Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- /Profile Sidebar -->
+
+            </div>
+
+
+<!-- /Page Content -->
+
+
+<!-- jQuery -->
+<script src="{{ asset('assets/tutorfront/jquery.min.js') }}"></script>
+
+<!-- Bootstrap Core JS -->
+<script src="{{ asset('assets/tutorfront/popper.min.js') }}"></script>
+<script src="{{ asset('assets/tutorfront/bootstrap.min.js') }}"></script>
+
+<!-- Sticky Sidebar JS -->
+<script src="{{ asset('assets/tutorfront/ResizeSensor.js') }}"></script>
+<script src="{{ asset('assets/tutorfront/theia-sticky-sidebar.js') }}"></script>
+
+<!-- Circle Progress JS -->
+<script src="{{ asset('assets/tutorfront/circle-progress.min.js') }}"></script>
+
+<!-- Custom JS -->
+<script src="{{ asset('assets/tutorfront/script.js') }}"></script>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Reservation;
 use App\Entity\Token;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -47,5 +48,14 @@ class APIConfigController extends AbstractController
         return $this->render('base.html.twig');
     }
 
+    /**
+     * @Route("/make", name="reservation_make", methods={"GET"})
+     */
+    public function makeReservation(Reservation $reservation): Response
+    {
 
+        return $this->render('reservation/front.html.twig', [
+            'reservation' => $reservation,
+        ]);
+    }
 }

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.itext.itext7:pdftest:7.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.itext.itext7/pdftest/7.2.0/38b297589358ca94d2c2c96d7d22def64fa872ed/pdftest-7.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.itext.itext7/pdftest/7.2.0/ca0577d0b3e65c92161f4d3a88f92b6fc3261e09/pdftest-7.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

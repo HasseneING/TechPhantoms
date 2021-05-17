@@ -1,0 +1,303 @@
+<html>
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <title>Room Booking Form Flat Responsive Widget Template</title>
+    <!-- custom-theme -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- //custom-theme -->
+    <!-- js -->
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{{asset('assets/css/book/all.min.css')}}">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{asset('assets/css/book/style.css')}}">
+
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+    <!-- //js -->
+    <!-- font-awesome-icons -->
+    <link href="{{asset('assets/css/font-awesome.css')}}" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="{{asset('assets/js/jquery.js')}}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+
+    <!-- FullCalendar -->
+    <script src='{{asset('assets/js/moment.min.js')}}'></script>
+    <script src='{{asset('assets/js/fullcalendar.min.js')}}'></script>
+    <script src="{{asset('assets/js/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.formtowizard.js')}}"></script>
+
+    <script>
+        $( function() {
+            var $signupForm = $( '#SignupForm' );
+
+            $signupForm.validate({errorElement: 'em'});
+
+            $signupForm.formToWizard({
+                submitButton: 'SaveAccount',
+                nextBtnClass: 'btn btn-primary next',
+                prevBtnClass: 'btn btn-default prev',
+                buttonTag:    'button',
+                progress: function (i, count) {
+                    $('#progress-complete').width(''+(i/count*100)+'%');
+                }
+            });
+        });
+    </script>
+    <script>
+
+        $(document).ready(function() {
+
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay',
+
+                },
+                defaultDate: new Date($.now() + 168000000),
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                selectable: true,
+                selectHelper: true,
+                select: function(start, end) {
+
+                    $('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD HH:mm:ss'));
+                    $('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD HH:mm:ss'));
+                    $('#ModalAdd').modal('show');
+                },
+                eventRender: function(event, element) {
+                    element.bind('dblclick', function() {
+                        $('#ModalEdit #id').val(event.id);
+                        $('#ModalEdit #title').val(event.title);
+                        $('#ModalEdit #color').val(event.color);
+                        $('#ModalEdit').modal('show');
+                    });
+                },
+                eventDrop: function(event, delta, revertFunc) { // si changement de position
+
+                    edit(event);
+
+                },
+                eventResize: function(event,dayDelta,minuteDelta,revertFunc) { // si changement de longueur
+
+                    edit(event);
+
+                },
+                events: [
+                    {% for events in events %}
+
+                    {
+                        id: '{{ events.id }}',
+                        title: '{{ events.title }}',
+                        start: '{{ events.end ? events.end|date('Y-m-d H:i:s') : '' }}',
+                        end:  '{{ events.start ? events.start|date('Y-m-d H:i:s') : '' }}',
+                        color: '{{ events.color }}',
+
+                    },
+                    {% endfor %}
+                ]
+            });
+
+            function edit(event){
+                start = event.start.format('YYYY-MM-DD HH:mm:ss');
+                if(event.end){
+                    end = event.end.format('YYYY-MM-DD HH:mm:ss');
+                }else{
+                    end = start;
+                }
+
+                id =  event.id;
+
+                Event = [];
+                Event[0] = id;
+                Event[1] = start;
+                Event[2] = end;
+
+                $.ajax({
+                    url: '{{ path('event_edit') }}',
+                    type: "POST",
+                    data: {Event:Event},
+                    success: function(rep) {
+                        if(rep == 'OK'){
+                            alert('Saved');
+                        }else{
+                            alert('Could not be saved. try again.');
+                        }
+                    }
+                });
+            }
+
+        });
+
+    </script>
+    <style>
+        p {
+            font-size: 160%;
+        }
+    </style>
+</head>
+<body>
+
+<body>
+<div class="main">
+
+    <div class="w3_agile_main_grids">
+
+        <div id='progress'><div id='progress-complete'></div></div>
+        <form id="SignupForm" action="#" class="agile_form"method="post">
+            <fieldset>
+                <h3>Appointement date</h3>
+                <h4 class="w3layouts_type">Choose a date</h4>
+
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h1>Your Schedule</h1>
+                            <div id="calendar" class="col-centered">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <h3>Appointement time</h3>
+                <h4 class="w3layouts_type">Choose a time</h4>
+                <!-- Main Wrapper -->
+                <div class="main-wrapper">
+
+
+
+                    <!-- Breadcrumb -->
+
+                    <!-- /Breadcrumb -->
+
+                    <!-- Page Content -->
+                    <div class="content">
+                        <div class="container">
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="schedule-cont">
+                                        <div class="row">
+                                            <div class="col-md-12">
+
+                                                <!-- Time Slot -->
+                                                <div class="time-slot">
+                                                    <ul class="clearfix">
+
+                                                        <li>
+                                                            <a class="timing" href="#">
+                                                                <span>8:00</span> <span>AM</span>
+                                                            </a>
+                                                            <a class="timing" href="#">
+                                                                <span>9:00</span> <span>AM</span>
+                                                            </a>
+                                                            <a class="timing" href="#">
+                                                                <span>10:00</span> <span>AM</span>
+                                                            </a>
+                                                        </li>
+
+
+                                                        <li>
+                                                            <a class="timing" href="#">
+                                                                <span>11:00</span> <span>AM</span>
+                                                            </a>
+                                                            <a class="timing" href="#">
+                                                                <span>12:00</span> <span>AM</span>
+                                                            </a>
+                                                            <a class="timing" href="#">
+                                                                <span>13:00</span> <span>AM</span>
+                                                            </a>
+                                                        </li>
+
+
+                                                        <li>
+                                                            <a class="timing" href="#">
+                                                                <span>14:00</span> <span>AM</span>
+                                                            </a>
+                                                            <a class="timing" href="#">
+                                                                <span>15:00</span> <span>AM</span>
+                                                            </a>
+                                                            <a class="timing" href="#">
+                                                                <span>16:00</span> <span>AM</span>
+                                                            </a>
+                                                        </li>
+
+
+                                                        <li>
+                                                            <a class="timing" href="#">
+                                                                <span>17:00</span> <span>AM</span>
+                                                            </a>
+                                                            <a class="timing" href="#">
+                                                                <span>18:00</span> <span>AM</span>
+                                                            </a>
+                                                            <a class="timing" href="#">
+                                                                <span>19:00</span> <span>AM</span>
+                                                            </a>
+
+                                                        </li>
+                                                        <li>
+                                                            <a class="timing" href="#">
+                                                                <span>20:00</span> <span>AM</span>
+                                                            </a>
+                                                            <a class="timing selected" href="#">
+                                                                <span>21:00</span> <span>AM</span>
+                                                            </a>
+                                                            <a class="timing" href="#">
+                                                                <span>22:00</span> <span>AM</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- /Time Slot -->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <h3 class="w3_room">Confirm your appointement booking</h3>
+                <div class="form-group w3ls_description">
+                    <p>By Booking an appointement you agree on these terms :</p>
+                    <br>
+                    <li> You can't postpone already booked appointements</li>
+                    <li> You won't miss scheduled appointements</li>
+                    <li> You will respect and appear on time</li>
+                    <br>
+                    <input type="checkbox"> I agree on these terms
+                </div>
+            </fieldset>
+
+            <p>
+                <button id="SaveAccount" class="btn btn-primary agileinfo_primary submit">Submit form</button>
+            </p>
+        </form>
+
+    </div>
+</div>
+
+
+</body>
+

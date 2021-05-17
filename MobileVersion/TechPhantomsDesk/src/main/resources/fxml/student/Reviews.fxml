@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="ap" prefHeight="711.0" prefWidth="839.0" style="-fx-background-color: #fff;" styleClass="contentArea" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Taha.Admin_reviewsController">
+
+    <children>
+        <Pane prefHeight="139.0" prefWidth="1102.0" style="-fx-background-color: #2D75E8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="73.0" layoutY="30.0" text="Your reviews" textFill="WHITE">
+                    <font>
+                        <Font size="48.0" />
+                    </font>
+                </Label>
+                <Label layoutX="79.0" layoutY="91.0" textFill="WHITE">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Button fx:id="lirebt" layoutX="538.0" layoutY="420.0" mnemonicParsing="false" onAction="#lire" text="Modify selected review" textFill="#5831c4">
+            <font>
+                <Font name="Arial Bold" size="12.0" />
+            </font></Button>
+        <TableView fx:id="tablerevieww" editable="true" layoutX="15.0" layoutY="200.0" prefHeight="215.0" prefWidth="526.0">
+
+            <columns>
+                <TableColumn fx:id="reviewID" prefWidth="75.0" text="Num Review" />
+                <TableColumn fx:id="clstudentID" prefWidth="75.0" text="Student Name" />
+
+                <TableColumn fx:id="cltutorid" prefWidth="75.0" text="Tutor name" />
+                <TableColumn fx:id="clcomment" prefWidth="75.0" text="comment" />
+                <TableColumn fx:id="cltodayD" prefWidth="108.0" text="todayD" />
+                <TableColumn fx:id="clnote" prefWidth="101.5999755859375" text="note" />
+                <TableColumn fx:id="clrecomm" minWidth="0.0" prefWidth="122.4000244140625" text="recommandation" />
+                <TableColumn fx:id="starsrat" minWidth="150.0" prefWidth="111.19998779296873" text="stars" />
+
+
+            </columns>
+            <columnResizePolicy>
+
+            </columnResizePolicy>
+
+        </TableView>
+        <Button fx:id="deletbtn" layoutX="705.0" layoutY="421.0" mnemonicParsing="false" onAction="#deletselected" text="Delete selected row " textFill="#5831c4">
+            <font>
+                <Font name="Arial Bold" size="12.0" />
+            </font></Button>
+        <ChoiceBox fx:id="selectshow" layoutX="232.0" layoutY="419.0" prefHeight="26.0" prefWidth="218.0" />
+        <Button fx:id="stats" layoutX="846.0" layoutY="421.0" mnemonicParsing="false" onAction="#statsss" text="Stats" textFill="#5831c4">
+            <font>
+                <Font name="Arial Bold" size="12.0" />
+            </font></Button>
+        <Button fx:id="pdff" layoutX="480.0" layoutY="421.0" mnemonicParsing="false" onAction="#pdffimp" text="pdf" textFill="#5831c4">
+            <font>
+                <Font name="Arial Bold" size="12.0" />
+            </font></Button>
+
+        <Button fx:id="studentCH" layoutX="899.0" layoutY="421.0" mnemonicParsing="false" onAction="#studentChart" text="student sttas" textFill="#5831c4">
+            <font>
+                <Font name="Arial Bold" size="12.0" />
+            </font>
+        </Button>
+        <ListView fx:id="listt" layoutX="-2.0" layoutY="139.0" prefHeight="571.0" prefWidth="892.0" />
+    </children>
+
+</AnchorPane>

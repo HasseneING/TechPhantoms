@@ -4,10 +4,12 @@
 
 {% block body %}
     <h1>Edit Meet</h1>
-
+<center>
     {{ include('meet/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('meet_index') }}">back to list</a>
+    <a href="{{ path('meet_index') }}">Go Back To list</a>
 
     {{ include('meet/_delete_form.html.twig') }}
+</center>
+
 {% endblock %}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="278.0" prefWidth="325.0" spacing="30.0" style="-fx-background-color: #FFF;" stylesheets="@../css/alert.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.GoogleMeet">
+    <children>
+        <Label prefHeight="55.0" prefWidth="230.0" text="Enter your link">
+
+            <font>
+                <Font name="System Bold" size="30.0" />
+            </font>
+        </Label>
+        <Separator prefWidth="200.0" />
+        <JFXComboBox fx:id="tutor" layoutX="380.0" layoutY="408.0" prefHeight="27.0" prefWidth="228.0" promptText="Select a tutor" />
+        <JFXButton fx:id="btninvalid" cache="true" onAction="#handleButtonAction" prefHeight="39.0" prefWidth="161.0" ripplerFill="#f5f2f2" style="-fx-background-color: #F15C5C;" styleClass="btn" text="Join Google Meet" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </JFXButton>
+    </children>
+    <padding>
+        <Insets bottom="20.0" />
+    </padding>
+</VBox>

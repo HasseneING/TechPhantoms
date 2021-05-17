@@ -1,0 +1,43 @@
+
+
+{% block body %}
+    <h1>Meet</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>MeetId</th>
+            <td>{{ meet.meetId }}</td>
+        </tr>
+        <tr>
+            <th>MeetLink</th>
+            <td>{{ meet.meetLink }}</td>
+        </tr>
+        <tr>
+            <th>MeetDate</th>
+            <td>{{ meet.meetDate ? meet.meetDate|date('Y-m-d H:i:s') : '' }}</td>
+        </tr>
+        <tr>
+            <th>MeetPass</th>
+            <td>{{ meet.meetPass }}</td>
+        </tr>
+        <tr>
+            <th>MeetName</th>
+            <td>{{ meet.meetName }}</td>
+        </tr>
+        <tr>
+            <th>Participants</th>
+            <td>Tutor :{{ meet.tutorid }}
+                <br>
+                Student : {{ meet.studentid }}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+{% endblock %}

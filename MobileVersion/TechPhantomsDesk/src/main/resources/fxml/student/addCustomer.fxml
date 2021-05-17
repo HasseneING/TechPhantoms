@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="603.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.student.addCustomerController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="393.0" layoutX="365.0" layoutY="56.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="311.0">
+            <fill>
+                <LinearGradient endX="1.0" endY="1.0" startY="0.43893129770992356">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.02777777798473835" green="0.5462962985038757" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="1.0" green="0.4018518626689911" blue="0.4018518626689911" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </fill>
+        </Rectangle>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="603.0" stroke="WHITE" strokeType="INSIDE" width="210.0">
+            <fill>
+                <LinearGradient endY="1.0" startX="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.02777777798473835" green="0.5462962985038757" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="1.0" green="0.4018518626689911" blue="0.4018518626689911" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </fill>
+        </Rectangle>
+        <Button fx:id="submit" layoutX="448.0" layoutY="389.0" mnemonicParsing="false" onAction="#proceedToPaymentBTN" text="Proceed to payment!" />
+        <Label layoutX="377.0" layoutY="196.0" prefHeight="39.0" prefWidth="47.0" text="Email:" textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="377.0" layoutY="156.0" prefHeight="39.0" prefWidth="101.0" text="Full name:" textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="377.0" layoutY="235.0" prefHeight="39.0" prefWidth="114.0" text="Phone Number:" textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="FullNameTF" layoutX="480.0" layoutY="163.0" />
+        <TextField fx:id="EmailTF" layoutX="480.0" layoutY="204.0" />
+        <TextField fx:id="PhoneTF" layoutX="480.0" layoutY="245.0" />
+        <Text fill="WHITE" layoutX="26.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please fill out this form to proceed to payment" wrappingWidth="158.67579650878906">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Text>
+        <Label layoutX="377.0" layoutY="280.0" prefHeight="39.0" prefWidth="47.0" text="City :" textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="377.0" layoutY="321.0" prefHeight="39.0" prefWidth="114.0" text="Postal Code:" textFill="WHITE">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="CityTF" layoutX="480.0" layoutY="286.0" />
+        <TextField fx:id="PostalCodeTF" layoutX="480.0" layoutY="328.0" />
+        <Text fill="WHITE" layoutX="461.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome!">
+            <font>
+                <Font size="23.0" />
+            </font>
+        </Text>
+    </children>
+</AnchorPane>

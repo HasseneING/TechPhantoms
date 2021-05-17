@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import org.controlsfx.control.Rating?>
+<?import org.controlsfx.control.cell.MediaImageCell?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane style="-fx-background-color: #fff;" fx:id="ap" prefHeight="711.0" prefWidth="839.0" styleClass="contentArea" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Taha.Make_reviewController" >
+    <children>
+        <Pane prefHeight="139.0" prefWidth="1102.0" style="-fx-background-color: #2D75E8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="73.0" layoutY="30.0" text="Make a Review" textFill="WHITE">
+                    <font>
+                        <Font size="48.0" />
+                    </font>
+                </Label>
+                <Label layoutX="79.0" layoutY="91.0" textFill="WHITE">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <TextArea fx:id="comment" layoutX="234.0" layoutY="154.0" prefHeight="104.0" prefWidth="354.0" />
+        <Text layoutX="14.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Do you recommend this training?">
+            <font>
+                <Font size="17.0" />
+            </font></Text>
+        <Text layoutX="14.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rating :">
+            <font>
+                <Font size="17.0" />
+            </font></Text>
+        <Text layoutX="14.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment :">
+            <font>
+                <Font size="17.0" />
+            </font></Text>
+
+        <RadioButton fx:id="rc_ys" layoutX="308.0" layoutY="379.0" mnemonicParsing="false" text="YES " />
+        <RadioButton fx:id="rec_no" layoutX="417.0" layoutY="379.0" mnemonicParsing="false" text="NO" />
+        <Button fx:id="submitrev" layoutX="317.0" layoutY="422.0" mnemonicParsing="false" onAction="#submitreview" prefHeight="26.0" prefWidth="130.0" text="Submit feedback" />
+        <Text fx:id="emoji_rate" layoutX="448.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Excellent !">
+            <font>
+                <Font size="14.0" />
+            </font></Text>
+        <Text fx:id="labeltext" layoutX="192.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+        <TextField fx:id="note" layoutX="234.0" layoutY="282.0" prefHeight="26.0" prefWidth="40.0" />
+        <Text layoutX="286.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="/ 10" />
+        <Text layoutX="18.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Efficacity :">
+            <font>
+                <Font size="17.0" />
+            </font></Text>
+        <Rating fx:id="stars" layoutX="242.0" layoutY="323.0" onMouseClicked="#smiley" />
+        <MediaImageCell />
+        <ImageView fx:id="sademoji" fitHeight="60.0" fitWidth="73.0" layoutX="530.0" layoutY="306.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../icons/3333.png" />
+            </image>
+        </ImageView>
+        <Text layoutX="100.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="His name and fech y9ari ">
+            <font>
+                <Font size="14.0" />
+            </font></Text>
+        <Button fx:id="vidd" layoutX="564.0" layoutY="416.0" mnemonicParsing="false" onAction="#vidUpload" prefHeight="32.0" prefWidth="130.0" text="Upload a video ! " />
+        <Text layoutX="20.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tutor :">
+            <font>
+                <Font size="17.0" />
+            </font></Text>
+
+    </children>
+
+</AnchorPane>

@@ -5,7 +5,7 @@ namespace App\Entity;
 use App\Repository\MeetRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=MeetRepository::class)
  */
@@ -13,7 +13,7 @@ class Meet
 {
     /**
      * @var int
-     *
+     * @Groups ("post:read")
      * @ORM\Column(name="meet_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
@@ -22,13 +22,14 @@ class Meet
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Meet link is required")
+     * @Groups ("post:read")
      * @ORM\Column(name="meet_link", type="string", length=250, nullable=true)
      */
     private $meetLink;
 
     /**
      * @var \DateTime|null
+     * @Groups ("post:read")
      * @Assert\NotBlank(message="Meet date is required")
      * @ORM\Column(name="meet_date", type="datetime", nullable=true)
      */
@@ -36,6 +37,7 @@ class Meet
 
     /**
      * @var string
+     * @Groups ("post:read")
      * @Assert\NotBlank(message="Meet password is required")
      * @ORM\Column(name="meet_pass", type="string", length=255, nullable=true)
      */
@@ -43,12 +45,14 @@ class Meet
 
     /**
      * @var string
+     * @Groups ("post:read")
      * @Assert\NotBlank(message="Meet name is required")
      * @ORM\Column(name="meet_name", type="string", length=255, nullable=true)
      */
     private $meetName;
 
     /**
+     * @Groups ("post:read")
      * @Assert\NotBlank(message=" Please select a Tutor")
      * @ORM\ManyToOne(targetEntity="App\Entity\Tutor", inversedBy="meets")
      * @ORM\JoinColumn(nullable=true)
@@ -57,6 +61,7 @@ class Meet
     private $tutorid;
 
     /**
+     * @Groups ("post:read")
      * @Assert\NotBlank(message=" Please select a Teacher")
      * @ORM\ManyToOne(targetEntity="App\Entity\Student", inversedBy="meets")
      * @ORM\JoinColumn(nullable=true)

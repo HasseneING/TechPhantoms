@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="530.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.teacher.PayementController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="532.0" layoutY="-3.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="722.0">
+            <fill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.2648148238658905" green="0.644660472869873" blue="1.0" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="1.0" green="0.3166666626930237" blue="0.5786111354827881" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </fill>
+        </Rectangle>
+        <TextField fx:id="CardNumberTF" layoutX="296.0" layoutY="148.0" prefHeight="26.0" prefWidth="229.0" promptText="Card Number *" />
+        <TextField fx:id="MMTF" layoutX="528.0" layoutY="148.0" prefHeight="26.0" prefWidth="55.0" promptText="MM * " />
+        <TextField fx:id="YYF" layoutX="584.0" layoutY="148.0" prefHeight="26.0" prefWidth="55.0" promptText="YY *" />
+        <TextField fx:id="CVCTF" layoutX="584.0" layoutY="186.0" prefHeight="26.0" prefWidth="55.0" promptText="CVC *" />
+        <TextField fx:id="CardHolderTF" layoutX="333.0" layoutY="225.0" />
+        <Label layoutX="296.0" layoutY="193.0" text="Card Holder name:" textFill="WHITE">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="296.0" layoutY="111.0" text="Credit card info:" textFill="WHITE">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="296.0" layoutY="267.0" text="Address:" textFill="WHITE">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <TextField fx:id="CountryTF" layoutX="334.0" layoutY="294.0" prefHeight="26.0" prefWidth="150.0" promptText="Country" />
+        <TextField fx:id="AdrLine1TF" layoutX="334.0" layoutY="331.0" prefHeight="26.0" prefWidth="278.0" promptText="Adress line 1" />
+        <TextField fx:id="AdrLine2TF" layoutX="333.0" layoutY="369.0" prefHeight="26.0" prefWidth="257.0" promptText="Adress line 2" />
+        <TextField fx:id="CityTF" layoutX="334.0" layoutY="410.0" prefHeight="26.0" prefWidth="149.0" promptText="City" />
+        <Button id="shiny-black" fx:id="cancel" layoutX="354.0" layoutY="447.0" mnemonicParsing="false" onAction="#cancelBtn" prefHeight="40.0" prefWidth="113.0" stylesheets="@../../css/ButtonStyle.css" text="Cancel" />
+        <Button id="shiny-orange" fx:id="submit" layoutX="503.0" layoutY="447.0" mnemonicParsing="false" onAction="#addCardBTN" prefHeight="40.0" prefWidth="149.0" stylesheets="@../../css/ButtonStyle.css" text="Add card" />
+        <Label layoutX="423.0" layoutY="110.0" prefHeight="26.0" prefWidth="122.0" text="*: required fields" textFill="WHITE">
+            <font>
+                <Font size="10.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

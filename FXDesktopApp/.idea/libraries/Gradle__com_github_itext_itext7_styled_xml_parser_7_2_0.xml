@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.itext.itext7:styled-xml-parser:7.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.itext.itext7/styled-xml-parser/7.2.0/e33369ac9629511e01271fc7147014222af1aa5c/styled-xml-parser-7.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.itext.itext7/styled-xml-parser/7.2.0/8a4a84a26cec0c89d0b8dafb8243f89d0c906354/styled-xml-parser-7.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

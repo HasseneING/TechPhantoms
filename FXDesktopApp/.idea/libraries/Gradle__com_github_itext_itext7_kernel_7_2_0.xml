@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.itext.itext7:kernel:7.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.itext.itext7/kernel/7.2.0/e627105bd4cd87c69ffe10dc1246c6347bfee82c/kernel-7.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.itext.itext7/kernel/7.2.0/f4976b5d6e994cd5a4e87a1d7c4b4af479576c75/kernel-7.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

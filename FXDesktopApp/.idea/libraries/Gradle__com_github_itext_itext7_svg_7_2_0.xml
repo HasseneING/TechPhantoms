@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.itext.itext7:svg:7.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.itext.itext7/svg/7.2.0/a21ee68241d4719ea4fd81d9bb87acd85a4275ba/svg-7.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.itext.itext7/svg/7.2.0/67ad29e077bbfb0c9fea6627889cf74d6901fcc9/svg-7.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -6,6 +6,8 @@ use App\Repository\TutorRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 /**
  * @ORM\Entity(repositoryClass=TutorRepository::class)
  */
@@ -22,7 +24,7 @@ class Tutor
 
     /**
      * @var string
-     *
+     * @Groups ("post:read")
      * @ORM\Column(name="username", type="string", length=30, nullable=false)
      */
     private $username;
@@ -168,6 +170,7 @@ class Tutor
     private $language;
 
     /**
+     *
      * @ORM\OneToMany(targetEntity="App\Entity\Meet", mappedBy="tutorid")
      */
     private $meets;

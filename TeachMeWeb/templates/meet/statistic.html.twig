@@ -1,0 +1,17 @@
+{% extends 'admin/index.html.twig' %}
+{% block body %}
+    <br>
+    <br><br><br>
+        {% block list_title %} Statistic{% endblock %}
+        {% block table %}
+            <div id="div_chart"></div>
+        {% endblock %}
+    {% block javascripts %}
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        {{ gc_draw(piechart, 'div_chart') }}
+    </script>
+{% endblock %}
+    <a href="{{ path('meet_index') }}">Go Back To List</a>
+
+{% endblock %}

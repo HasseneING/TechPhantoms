@@ -6,6 +6,8 @@ use App\Repository\StudentRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 /**
  * @ORM\Entity(repositoryClass=StudentRepository::class)
  */
@@ -22,7 +24,7 @@ class Student
 
     /**
      * @var string
-     *
+     * @Groups ("post:read")
      * @ORM\Column(name="username", type="string", length=30, nullable=false)
      */
     private $username;
@@ -133,11 +135,13 @@ class Student
     private $schedule;
 
     /**
+     *
      * @ORM\OneToMany(targetEntity="App\Entity\Meet", mappedBy="studentid")
      */
     private $meets;
 
     /**
+     *
      * @ORM\OneToMany(targetEntity="App\Entity\Reservation", mappedBy="studentid")
      */
     private $reservations;

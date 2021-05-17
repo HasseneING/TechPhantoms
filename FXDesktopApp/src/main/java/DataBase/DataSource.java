@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 public class DataSource {
 
-    private String url="jdbc:mysql://127.0.0.1:3306/pidev";
+    private String url="jdbc:mysql://127.0.0.1:3306/zoom";
     private String login="root";
     private String pwd="";
 

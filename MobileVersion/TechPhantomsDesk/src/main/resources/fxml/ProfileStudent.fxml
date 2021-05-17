@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="720.0" prefWidth="673.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProfileStudentController">
+    <children>
+        <AnchorPane layoutX="23.0" layoutY="34.0" prefHeight="519.0" prefWidth="606.0" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="47.0">
+            <children>
+                <AnchorPane layoutX="34.0" layoutY="17.0" maxWidth="749.0" prefHeight="553.0" prefWidth="558.0" style="-fx-background-color: white; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="53.0" AnchorPane.leftAnchor="34.0" AnchorPane.topAnchor="17.0">
+                    <children>
+                  <ImageView fx:id="inpPhoto" fitHeight="180.0" fitWidth="200.0" layoutX="70.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/image.png" />
+                     </image>
+                  </ImageView>
+                  <JFXTextField fx:id="inpUsername" focusColor="#4ffbca" labelFloat="true" layoutX="300.0" layoutY="40.0" prefHeight="40.0" prefWidth="200.0" promptText="Username" unFocusColor="BLACK" />
+                  <JFXTextField fx:id="inpEmail" focusColor="#4ffbca" labelFloat="true" layoutX="300.0" layoutY="110.0" prefHeight="40.0" prefWidth="200.0" promptText="Email" unFocusColor="BLACK" />
+                  <JFXTextField fx:id="inpPassword" accessibleRole="PASSWORD_FIELD" focusColor="#4ffbca" labelFloat="true" layoutX="300.0" layoutY="180.0" prefHeight="40.0" prefWidth="200.0" promptText="Password" unFocusColor="BLACK" />
+                        <JFXTextField fx:id="inpFirstName" focusColor="#4ffbca" labelFloat="true" layoutX="60.0" layoutY="250.0" prefHeight="40.0" prefWidth="200.0" promptText="First name" unFocusColor="BLACK" AnchorPane.leftAnchor="60.0" />
+                        <JFXTextField fx:id="inpLastName" focusColor="#4ffbca" labelFloat="true" layoutX="300.0" layoutY="250.0" prefHeight="40.0" prefWidth="200.0" promptText="Last name" unFocusColor="BLACK" />
+                  <JFXComboBox fx:id="inpState" focusColor="CRIMSON" labelFloat="true" layoutX="60.0" layoutY="320.0" prefHeight="40.0" prefWidth="200.0" promptText="State" />
+                  <JFXDatePicker fx:id="inpDate" defaultColor="CRIMSON" layoutX="300.0" layoutY="320.0" prefHeight="40.0" prefWidth="200.0" />
+                  <JFXTextField fx:id="inpNumber" focusColor="CRIMSON" labelFloat="true" layoutX="60.0" layoutY="390.0" prefHeight="40.0" prefWidth="200.0" promptText="Phone Number" unFocusColor="BLACK" />
+                  <JFXTextField fx:id="inpCin" focusColor="CRIMSON" labelFloat="true" layoutX="300.0" layoutY="390.0" prefHeight="40.0" prefWidth="200.0" promptText="C I N" unFocusColor="BLACK" />
+                        <JFXButton fx:id="btnModify" buttonType="RAISED" layoutX="279.0" layoutY="472.0" onAction="#ModifyStuPRof" prefHeight="40.0" prefWidth="90.0" ripplerFill="WHITE" style="-fx-background-color: orange; -fx-background-radius: 1em;" text="Modify" />
+                  <JFXButton fx:id="btnCancel" buttonType="RAISED" layoutX="409.0" layoutY="472.0" onAction="#Cancel" prefHeight="40.0" prefWidth="90.0" ripplerFill="WHITE" style="-fx-background-color: orange; -fx-background-radius: 1em;" text="Cancel" />
+                    </children>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
