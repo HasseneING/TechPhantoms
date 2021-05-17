@@ -303,15 +303,15 @@
     "twig/extra-bundle": {
         "version": "v3.3.0"
     },
-<<<<<<< HEAD
+
     "twig/twig": {
         "version": "v3.3.0"
     },
     "twilio/sdk": {
         "version": "6.22.0"
     },
-=======
->>>>>>> Main
+
+
     "webmozart/assert": {
         "version": "1.10.0"
     }
